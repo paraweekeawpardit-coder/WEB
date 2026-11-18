@@ -2,31 +2,38 @@
   "tables": [
     {
       "id": "A01",
-      "status": "occupied"
+      "status": "occupied", 
+      "guests": 4
     },
     {
       "id": "A02",
-      "status": "available"
+      "status": "occupied", 
+      "guests": 0
     },
     {
       "id": "A03",
-      "status": "available"
+      "status": "available",
+      "guests": 0
     },
     {
       "id": "A04",
-      "status": "available"
+      "status": "available", 
+      "guests": 0
     },
     {
       "id": "A05",
-      "status": "available"
+      "status": "available", 
+      "guests": 0
     },
     {
       "id": "B01",
-      "status": "available"
+      "status": "available", 
+      "guests": 0
     },
     {
       "id": "B02",
-      "status": "available"
+      "status": "available", 
+      "guests": 0
     }
   ],
   "menus": [
@@ -156,6 +163,21 @@
       "status": "pending",
       "createdAt": "2026-11-18T03:48:26.485Z",
       "id": 3
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 15
+        }
+      ],
+      "total": 1485,
+      "status": "pending",
+      "createdAt": "2026-11-18T06:20:52.860Z",
+      "id": 4
     }
   ],
   "serviceCalls": [
@@ -165,6 +187,13 @@
       "done": false,
       "createdAt": "2026-11-18T04:33:37.549Z",
       "id": 1
+    },
+    {
+      "tableId": "A01",
+      "type": "bill",
+      "done": false,
+      "createdAt": "2026-11-18T06:13:32.200Z",
+      "id": 2
     }
   ]
 }

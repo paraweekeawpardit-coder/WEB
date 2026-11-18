@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Navigate, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useSearchParams } from 'react-router-dom'
 import MenuToolbar from '../../components/customer/MenuToolbar'
 import MenuCard from '../../components/customer/MenuCard'
 import CartPanel from '../../components/customer/CartPanel'
 import OrderStatus from '../../components/customer/OrderStatus'
-import ServiceActions from '../../components/customer/ServiceAction'
+import ServiceActions from "../../components/customer/ServiceAction"
 import useCart from '../../hooks/useCart'
 import { api } from '../../services/api'
 import { getSavedTable, normalizeTable } from '../../services/TableService'
@@ -65,6 +65,9 @@ export default function MenuPage() {
   return (
     <div className="menu-page">
       <header className="menu-top">
+        <Link to="/" className="back-link">
+          ← หน้าหลัก
+        </Link>
         <div>
           <p className="shop">ร้านสุกี้</p>
           <h1>โต๊ะ {table}</h1>
@@ -105,10 +108,13 @@ export default function MenuPage() {
             submitting={submitting}
             error={error}
           />
+          <Link to={`/customer/bill?table=${encodeURIComponent(table)}`} className="add-btn bill-link">
+            ดูประวัติและยอดรวมบิล
+          </Link>
           <OrderStatus table={table} />
           <ServiceActions table={table} />
         </div>
       </div>
     </div>
   )
-}  
+}
