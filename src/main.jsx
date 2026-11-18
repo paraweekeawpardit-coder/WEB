@@ -20,14 +20,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="/customer/welcome" element={<WelcomePage />} />
         <Route path="/customer/menu" element={<MenuPage />} />
         <Route path="/customer/bill" element={<BillPage />} />
-        <Route
-          path="/staff"
-          element={
-            <p style={{ padding: 24 }}>
-              หน้าพนักงานยังไม่ได้ทำ · <Link to="/staff/tables">ตั้งค่าโต๊ะ / จำนวนคน</Link>
-            </p>
-          }
-        />
         <Route path="/staff" element={<StaffDashboardPage />} />
         <Route path="/admin" element={<Placeholder name="แอดมิน" />} />
       </Routes>

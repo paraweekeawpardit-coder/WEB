@@ -2,12 +2,12 @@
   "tables": [
     {
       "id": "A01",
-      "status": "occupied", 
+      "status": "occupied",
       "guests": 4
     },
     {
       "id": "A02",
-      "status": "occupied", 
+      "status": "occupied",
       "guests": 0
     },
     {
@@ -17,22 +17,22 @@
     },
     {
       "id": "A04",
-      "status": "available", 
+      "status": "available",
       "guests": 0
     },
     {
       "id": "A05",
-      "status": "available", 
+      "status": "available",
       "guests": 0
     },
     {
       "id": "B01",
-      "status": "available", 
+      "status": "available",
       "guests": 0
     },
     {
       "id": "B02",
-      "status": "available", 
+      "status": "available",
       "guests": 0
     }
   ],
@@ -160,7 +160,7 @@
         }
       ],
       "total": 236,
-      "status": "pending",
+      "status": "preparing",
       "createdAt": "2026-11-18T03:48:26.485Z",
       "id": 3
     },
@@ -175,7 +175,7 @@
         }
       ],
       "total": 1485,
-      "status": "pending",
+      "status": "served",
       "createdAt": "2026-11-18T06:20:52.860Z",
       "id": 4
     }
