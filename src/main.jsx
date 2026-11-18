@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import WelcomePage from './pages/customer/WelcomePage.jsx'
 import MenuPage from './pages/customer/MenuPage.jsx'
+import StaffDashboardPage from './pages/staff/StaffDashboardPage'
 
 const Placeholder = ({ name }) => (
   <p style={{ padding: 24 }}>หน้า {name} ยังไม่ได้ทำ</p>
@@ -17,7 +18,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/customer/welcome" element={<WelcomePage />} />
         <Route path="/customer/menu" element={<MenuPage />} />
-        <Route path="/staff" element={<Placeholder name="พนักงาน" />} />
+        <Route path="/staff" element={<StaffDashboardPage />} />
         <Route path="/admin" element={<Placeholder name="แอดมิน" />} />
       </Routes>
     </BrowserRouter>
