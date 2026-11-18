@@ -1,0 +1,323 @@
+/* ฉากหลังผ้าตารางสีแดง เหมือนหน้าแรก, การ์ดเป็นใบเสร็จกระดาษ */
+.bill-page {
+  min-height: 100vh;
+  color: var(--print);
+  background-color: var(--cloth);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.09) 0 28px, transparent 28px 56px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.09) 0 28px, transparent 28px 56px);
+}
+
+.bill-top {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 12px clamp(16px, 4vw, 32px);
+  color: #fff;
+  background: rgba(150, 20, 30, 0.96);
+  box-shadow: 0 2px 10px rgba(60, 0, 0, 0.3);
+}
+
+.bill-top h1 {
+  margin: 0;
+  font-size: 1.375rem;
+  letter-spacing: 0.01em;
+}
+
+.bill-top .back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.bill-top .back-link:hover,
+.bill-top .back-link:focus-visible {
+  color: var(--cloth);
+  background: #fff;
+}
+
+.bill-body {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 24px clamp(16px, 4vw, 32px) 56px;
+}
+
+/* ใบเสร็จ: กระดาษขาว ขอบล่างหยัก */
+.bill-card {
+  position: relative;
+  margin-bottom: 28px;
+  padding: 20px 20px 24px;
+  background: var(--paper);
+  border-radius: 6px 6px 0 0;
+  filter: drop-shadow(0 8px 14px rgba(60, 0, 0, 0.35));
+}
+
+.bill-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 10px;
+  background:
+    linear-gradient(135deg, var(--paper) 50%, transparent 50%) 0 0 / 14px 10px repeat-x,
+    linear-gradient(225deg, var(--paper) 50%, transparent 50%) 0 0 / 14px 10px repeat-x;
+}
+
+.bill-card h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  font-size: 1.125rem;
+  border-bottom: 2px dashed var(--rule);
+}
+
+.mode-tag {
+  padding: 2px 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--print);
+  background: #ece9e1;
+  border-radius: 999px;
+}
+
+.mode-tag.buffet {
+  color: #fff;
+  background: var(--cloth);
+}
+
+.bill-card select {
+  min-height: 40px;
+  padding: 6px 12px;
+  font: inherit;
+  background: #fff;
+  border: 2px solid var(--rule);
+  border-radius: 8px;
+}
+
+.bill-card .muted {
+  margin: 0;
+}
+
+/* ตารางรายการ (อาลาคาร์ต) */
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.bill-table th {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.bill-table th,
+.bill-table td {
+  padding: 8px 4px;
+  text-align: left;
+  border-bottom: 1.5px dashed var(--rule);
+}
+
+.bill-table .num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* สรุปยอด */
+.sum {
+  margin: 14px 0 0;
+}
+
+.sum div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+}
+
+.sum dt,
+.sum dd {
+  margin: 0;
+}
+
+.sum dd {
+  font-variant-numeric: tabular-nums;
+}
+
+.sum .grand {
+  align-items: center;
+  margin-top: 12px;
+  padding: 12px 14px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--cloth);
+  border-radius: 8px;
+}
+
+.sum .grand dd {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* หารจ่ายต่อคน */
+.split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.per-head {
+  margin: 14px 0 0;
+  padding: 14px;
+  text-align: center;
+  font-size: 1.0625rem;
+  background: #fff;
+  border: 2px dashed var(--cloth);
+  border-radius: 10px;
+}
+
+.per-head strong {
+  display: block;
+  color: var(--cloth);
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+/* ประวัติการสั่ง */
+.history,
+.history-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history > li {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  border-left: 5px solid var(--cloth);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.history .order-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.history-items li {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  font-size: 0.9375rem;
+  border-bottom: 1px dotted var(--rule);
+}
+
+.history-items li:last-child {
+  border-bottom: 0;
+}
+
+.order-sub {
+  margin: 8px 0 0;
+  text-align: right;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* สีสถานะ ใช้ซ้ำในหน้าบิล */
+.bill-card .badge {
+  padding: 2px 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.bill-card .badge.pending {
+  color: #7c2d12;
+  background: #ffedd5;
+}
+
+.bill-card .badge.preparing {
+  color: #713f12;
+  background: #fef08a;
+}
+
+.bill-card .badge.served {
+  color: #14532d;
+  background: #dcfce7;
+}
+
+/* ปุ่ม − / + ในหน้าบิลและหน้าตั้งค่าโต๊ะ (ไม่พึ่ง CSS หน้าเมนู) */
+.bill-card .stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bill-card .stepper button {
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cloth);
+  background: #fff;
+  border: 2px solid var(--cloth);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.bill-card .stepper button:hover:not(:disabled) {
+  color: #fff;
+  background: var(--cloth);
+}
+
+.bill-card .stepper button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.bill-card .stepper output {
+  min-width: 2ch;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.bill-card a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .bill-table {
+    font-size: 0.875rem;
+  }
+  .sum .grand {
+    font-size: 1.0625rem;
+  }
+  .sum .grand dd {
+    font-size: 1.25rem;
+  }
+}

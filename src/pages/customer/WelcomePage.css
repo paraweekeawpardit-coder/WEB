@@ -1,4 +1,19 @@
 /* ใช้ .cloth .slip .go .table-field จาก App.css เดิม */
+.slip .back-link {
+  margin-bottom: 12px;
+  color: var(--ink);
+  background: transparent;
+  border: 1.5px solid var(--ink);
+}
+
+.slip .back-link:hover {
+  color: #fff;
+  background: var(--ink);
+}
+
+.slip .back-link:focus-visible {
+  outline-color: var(--ink);
+}
 .field-error {
   min-height: 1.5em;
   margin: 8px 0 0;

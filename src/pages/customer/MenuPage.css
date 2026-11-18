@@ -155,16 +155,24 @@
 }
 
 .stepper button {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   font: inherit;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1;
   color: var(--ink);
-  background: transparent;
+  background: #fff;
   border: 2px solid var(--ink);
   border-radius: 50%;
   cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+@media (hover: hover) {
+  .stepper button:hover:not(:disabled) {
+    color: #fff;
+    background: var(--ink);
+  }
 }
 
 .stepper button:disabled {
@@ -179,19 +187,31 @@
 }
 
 .add-btn {
-  padding: 8px;
+  min-height: 44px;
+  padding: 8px 12px;
   font: inherit;
-  font-weight: 600;
-  color: var(--cloth);
-  background: transparent;
-  border: 2px solid var(--cloth);
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.add-btn:hover {
+  font-weight: 700;
   color: #fff;
   background: var(--cloth);
+  border: 2px solid var(--cloth);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.1s, filter 0.15s;
+}
+
+@media (hover: hover) {
+  .add-btn:hover:not(:disabled) {
+    filter: brightness(0.88);
+  }
+}
+
+.add-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.add-btn:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
 }
 
 .cart,
@@ -202,6 +222,61 @@
   background: #fff;
   border: 2px solid var(--print);
   border-radius: 8px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 16px;
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.back-link:hover {
+  color: var(--cloth);
+  background: #fff;
+}
+
+.back-link:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.menu-top .back-link {
+  flex: none;
+}
+
+.menu-top > div {
+  text-align: center;
+}
+
+.bill-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  background: #fff;
+  border-color: var(--ink);
+}
+
+@media (hover: hover) {
+  .bill-link:hover {
+    color: #fff;
+    background: var(--ink);
+    filter: none;
+  }
 }
 
 .service h2 {
@@ -215,11 +290,23 @@
   gap: 10px;
 }
 
+.service-btns .add-btn {
+  color: var(--cloth);
+  background: #fff;
+}
+
+@media (hover: hover) {
+  .service-btns .add-btn:hover:not(:disabled) {
+    color: #fff;
+    background: var(--cloth);
+    filter: none;
+  }
+}
+
 .service-btns .add-btn:disabled {
   color: var(--muted);
-  border-style: dashed;
+  background: #f1efe9;
   border-color: var(--rule);
-  background: transparent;
   cursor: not-allowed;
 }
 

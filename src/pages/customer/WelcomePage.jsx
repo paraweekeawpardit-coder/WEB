@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import WelcomeHeader from '../../components/customer/WelcomeHeader'
 import TableCodeForm from '../../components/customer/TableCodeForm'
 import QrScanBox from '../../components/customer/QrScanBox'
 import FeaturedFoods from '../../components/customer/FeatureFoods'
-import { findTable, normalizeTable, openTable } from "../../services/TableService"
+import { findTable, normalizeTable, openTable } from '../../services/TableService'
 import './WelcomePage.css'
 
 export default function WelcomePage() {
@@ -12,6 +12,7 @@ export default function WelcomePage() {
   const [params] = useSearchParams()
   const fromUrl = normalizeTable(params.get('table'))
 
+  // โต๊ะจาก QR/URL ที่ตรวจกับระบบกลางแล้ว (null = ไม่มีหรือไม่ถูกต้อง)
   const [urlTable, setUrlTable] = useState(null)
   const [checking, setChecking] = useState(!!fromUrl)
   const [scanError, setScanError] = useState('')
@@ -21,13 +22,14 @@ export default function WelcomePage() {
     let alive = true
     findTable(fromUrl)
       .then((t) => alive && setUrlTable(t))
-      .catch(() => {})
+      .catch(() => {}) // เชื่อมต่อไม่ได้ -> ตกไปใช้ฟอร์มกรอกเอง
       .finally(() => alive && setChecking(false))
     return () => {
       alive = false
     }
   }, [fromUrl])
 
+  // ใช้ร่วมกันทั้งฟอร์ม, ปุ่มสแกน และลิงก์ QR
   const enter = async (code) => {
     let table
     try {
@@ -43,6 +45,9 @@ export default function WelcomePage() {
   return (
     <main className="cloth">
       <div className="slip">
+        <Link to="/" className="back-link">
+          ← กลับหน้าเลือกบทบาท
+        </Link>
         <WelcomeHeader table={urlTable?.id} />
 
         {checking ? (
