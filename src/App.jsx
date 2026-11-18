@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 
 // เปลี่ยน path ให้ตรงกับ route จริงของโปรเจกต์
@@ -7,7 +8,7 @@ const ROLES = [
     id: 'customer',
     name: 'ลูกค้า',
     line: 'สั่งอาหารที่โต๊ะ',
-    href: '/customer',
+    href: '/customer/welcome',
     cta: 'เริ่มสั่งอาหาร',
     features: [
       'สแกน QR Code ประจำโต๊ะ หรือกรอกเลขโต๊ะเพื่อเริ่มสั่ง',
@@ -50,6 +51,7 @@ function Tick() {
 }
 
 function App() {
+  const navigate = useNavigate()
   const [roleId, setRoleId] = useState(null)
   const [table, setTable] = useState('')
 
@@ -61,9 +63,11 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!ready) return
-    window.location.href = needsTable
-      ? `${role.href}?table=${encodeURIComponent(tableCode)}`
-      : role.href
+    navigate(
+      needsTable
+        ? `${role.href}?table=${encodeURIComponent(tableCode)}`
+        : role.href,
+    )
   }
 
   return (

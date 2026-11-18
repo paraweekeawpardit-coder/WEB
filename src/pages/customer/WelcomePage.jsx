@@ -1,0 +1,75 @@
+import { useEffect, useState } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import WelcomeHeader from '../../components/customer/WelcomeHeader'
+import TableCodeForm from '../../components/customer/TableCodeForm'
+import QrScanBox from '../../components/customer/QrScanBox'
+import FeaturedFoods from '../../components/customer/FeatureFoods'
+import { findTable, normalizeTable, openTable } from "../../services/TableService"
+import './WelcomePage.css'
+
+export default function WelcomePage() {
+  const navigate = useNavigate()
+  const [params] = useSearchParams()
+  const fromUrl = normalizeTable(params.get('table'))
+
+  const [urlTable, setUrlTable] = useState(null)
+  const [checking, setChecking] = useState(!!fromUrl)
+  const [scanError, setScanError] = useState('')
+
+  useEffect(() => {
+    if (!fromUrl) return
+    let alive = true
+    findTable(fromUrl)
+      .then((t) => alive && setUrlTable(t))
+      .catch(() => {})
+      .finally(() => alive && setChecking(false))
+    return () => {
+      alive = false
+    }
+  }, [fromUrl])
+
+  const enter = async (code) => {
+    let table
+    try {
+      table = await findTable(code)
+    } catch {
+      throw new Error('เชื่อมต่อระบบไม่ได้ กรุณาลองใหม่หรือเรียกพนักงาน')
+    }
+    if (!table) throw new Error(`ไม่พบโต๊ะ ${normalizeTable(code)} ในระบบ`)
+    await openTable(table)
+    navigate(`/customer/menu?table=${encodeURIComponent(table.id)}`)
+  }
+
+  return (
+    <main className="cloth">
+      <div className="slip">
+        <WelcomeHeader table={urlTable?.id} />
+
+        {checking ? (
+          <p className="or">กำลังตรวจสอบโต๊ะ...</p>
+        ) : urlTable ? (
+          <button className="go" type="button" onClick={() => enter(urlTable.id)}>
+            เริ่มสั่งอาหารที่โต๊ะ {urlTable.id}
+          </button>
+        ) : (
+          <>
+            <TableCodeForm initialValue={fromUrl} onSubmit={enter} />
+            <QrScanBox
+              onScan={(code) => {
+                setScanError('')
+                enter(code).catch((err) => setScanError(err.message))
+              }}
+            />
+            {scanError && (
+              <p role="alert" className="field-error">
+                {scanError}
+              </p>
+            )}
+          </>
+        )}
+
+        <FeaturedFoods />
+      </div>
+    </main>
+  )
+}

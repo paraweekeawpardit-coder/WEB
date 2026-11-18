@@ -1,0 +1,170 @@
+{
+  "tables": [
+    {
+      "id": "A01",
+      "status": "occupied"
+    },
+    {
+      "id": "A02",
+      "status": "available"
+    },
+    {
+      "id": "A03",
+      "status": "available"
+    },
+    {
+      "id": "A04",
+      "status": "available"
+    },
+    {
+      "id": "A05",
+      "status": "available"
+    },
+    {
+      "id": "B01",
+      "status": "available"
+    },
+    {
+      "id": "B02",
+      "status": "available"
+    }
+  ],
+  "menus": [
+    {
+      "id": 1,
+      "name": "เนื้อวัวสไลซ์",
+      "category": "beef",
+      "price": 129,
+      "available": true,
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "สันคอหมูสไลซ์",
+      "category": "pork",
+      "price": 99,
+      "available": true,
+      "image": ""
+    },
+    {
+      "id": 3,
+      "name": "กุ้งสด",
+      "category": "seafood",
+      "price": 149,
+      "available": true,
+      "image": ""
+    },
+    {
+      "id": 4,
+      "name": "ผักรวม",
+      "category": "veggie",
+      "price": 59,
+      "available": true,
+      "image": ""
+    },
+    {
+      "id": 5,
+      "name": "ลูกชิ้นรวม",
+      "category": "meatball",
+      "price": 69,
+      "available": true,
+      "image": ""
+    },
+    {
+      "id": 6,
+      "name": "น้ำซุปหม่าล่า",
+      "category": "soup",
+      "price": 39,
+      "available": true,
+      "image": ""
+    },
+    {
+      "id": 7,
+      "name": "น้ำเปล่า",
+      "category": "drink",
+      "price": 15,
+      "available": true,
+      "image": ""
+    }
+  ],
+  "orders": [
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 6
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 4
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 1547,
+      "status": "pending",
+      "createdAt": "2026-11-18T03:46:07.954Z",
+      "id": 1
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 10
+        }
+      ],
+      "total": 1206,
+      "status": "pending",
+      "createdAt": "2026-11-18T03:48:19.415Z",
+      "id": 2
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 4
+        }
+      ],
+      "total": 236,
+      "status": "pending",
+      "createdAt": "2026-11-18T03:48:26.485Z",
+      "id": 3
+    }
+  ],
+  "serviceCalls": [
+    {
+      "tableId": "A01",
+      "type": "call",
+      "done": false,
+      "createdAt": "2026-11-18T04:33:37.549Z",
+      "id": 1
+    }
+  ]
+}
