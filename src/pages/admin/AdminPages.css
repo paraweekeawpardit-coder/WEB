@@ -877,3 +877,219 @@ a.adm-hub-card:hover .adm-hub-arrow {
   background: #fff5f5;
   transform: translateX(-2px);
 }
+
+/* หน้าจัดการโต๊ะ */
+.tbl-stat-available {
+  border-top-color: #10b981;
+}
+.tbl-stat-available .adm-stat-icon {
+  background: #d1fae5;
+  color: #047857;
+}
+.tbl-stat-occupied {
+  border-top-color: #f59e0b;
+}
+.tbl-stat-occupied .adm-stat-icon {
+  background: #fef3c7;
+  color: #b45309;
+}
+.tbl-stat-billing {
+  border-top-color: #dc2626;
+}
+.tbl-stat-billing .adm-stat-icon {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.tbl-filter-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.tbl-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.tbl-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-top-width: 5px;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.tbl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09);
+}
+.tbl-card.status-available {
+  border-top-color: #10b981;
+}
+.tbl-card.status-occupied {
+  border-top-color: #f59e0b;
+}
+.tbl-card.status-billing {
+  border-color: #fca5a5;
+  border-top-color: #dc2626;
+  background: #fffafa;
+}
+
+.tbl-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+.tbl-zone {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #6b7280;
+}
+.tbl-number {
+  margin: 2px 0 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #111827;
+}
+
+.tbl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.tbl-badge.available {
+  background: #d1fae5;
+  color: #065f46;
+}
+.tbl-badge.occupied {
+  background: #fef3c7;
+  color: #92400e;
+}
+.tbl-badge.billing {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.tbl-card-body {
+  flex: 1;
+  margin: 14px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f9fafb;
+  display: grid;
+  gap: 8px;
+}
+.tbl-idle-text {
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  color: #059669;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.tbl-info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #4b5563;
+}
+.tbl-info-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.tbl-bill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 8px;
+  border-top: 1px dashed #d1d5db;
+  font-size: 0.88rem;
+  color: #374151;
+}
+.tbl-bill-row strong {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #b7242a;
+}
+
+.tbl-card-foot {
+  display: flex;
+  gap: 8px;
+}
+.tbl-card-foot .adm-btn {
+  flex: 1;
+  white-space: nowrap;
+  padding: 9px 10px;
+}
+.tbl-ready-label {
+  width: 100%;
+  padding: 9px;
+  text-align: center;
+  border-radius: 9px;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+/* รายการอาหารใน Modal */
+.tbl-order-list {
+  display: grid;
+  gap: 10px;
+  max-height: 45vh;
+  overflow-y: auto;
+}
+.tbl-order-box {
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+}
+.tbl-order-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+.tbl-order-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+.tbl-order-box li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+.tbl-modal-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #fff1f2;
+  font-weight: 800;
+}
+.tbl-modal-total strong {
+  font-size: 1.35rem;
+  color: #b7242a;
+}
