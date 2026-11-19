@@ -4,7 +4,7 @@ import WelcomeHeader from '../../components/customer/WelcomeHeader'
 import TableCodeForm from '../../components/customer/TableCodeForm'
 import QrScanBox from '../../components/customer/QrScanBox'
 import FeaturedFoods from '../../components/customer/FeatureFoods'
-import { findTable, normalizeTable, openTable } from '../../services/TableService'
+import { findTable, normalizeTable } from '../../services/tableService'
 import './WelcomePage.css'
 
 export default function WelcomePage() {
@@ -29,7 +29,7 @@ export default function WelcomePage() {
     }
   }, [fromUrl])
 
-  // ใช้ร่วมกันทั้งฟอร์ม, ปุ่มสแกน และลิงก์ QR
+  // ใช้ร่วมกันทั้งฟอร์ม, ปุ่มสแกน และลิงก์ QR (ตรวจสอบว่ามีโต๊ะจริง โดยไม่เปลี่ยนสถานะโต๊ะอัตโนมัติ)
   const enter = async (code) => {
     let table
     try {
@@ -38,7 +38,6 @@ export default function WelcomePage() {
       throw new Error('เชื่อมต่อระบบไม่ได้ กรุณาลองใหม่หรือเรียกพนักงาน')
     }
     if (!table) throw new Error(`ไม่พบโต๊ะ ${normalizeTable(code)} ในระบบ`)
-    await openTable(table)
     navigate(`/customer/menu?table=${encodeURIComponent(table.id)}`)
   }
 
