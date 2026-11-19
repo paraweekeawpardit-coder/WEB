@@ -29,7 +29,12 @@ export const api = {
 
   // ออเดอร์
   getOrders: () => request('/orders?_sort=createdAt&_order=desc'),
-  getOrdersByTable: (tableId) => request(`/orders?tableId=${tableId}&_sort=createdAt&_order=desc`),
+  // ซ่อนออเดอร์ที่ชำระแล้ว (paid) ตอนแอดมินเคลียร์โต๊ะ เพื่อให้ลูกค้ารอบใหม่เริ่มจากบิลว่าง
+  // (ยังเก็บ paid ไว้ใน db เพื่อใช้คำนวณสถิติ จึงกรองฝั่ง client)
+  getOrdersByTable: async (tableId) => {
+    const list = await request(`/orders?tableId=${tableId}&_sort=createdAt&_order=desc`)
+    return list.filter((o) => o.status !== 'paid')
+  },
   createOrder: ({ tableId, items }) =>
     request('/orders', {
       method: 'POST',
@@ -47,11 +52,11 @@ export const api = {
   // เรียกพนักงาน / ขอเช็กบิล
   getServiceCalls: () => request('/serviceCalls?done=false'),
   getServiceCallsByTable: (tableId) => request(`/serviceCalls?tableId=${tableId}&done=false`),
+  updateServiceCall: (id, patch) =>
+    request(`/serviceCalls/${id}`, { method: 'PATCH', body: JSON.stringify(patch) }),
   createServiceCall: (tableId, type) =>
     request('/serviceCalls', {
       method: 'POST',
       body: JSON.stringify({ tableId, type, done: false, createdAt: new Date().toISOString() }),
     }),
-  updateServiceCall: (id, patch) =>
-    request(`/serviceCalls/${id}`, { method: 'PATCH', body: JSON.stringify(patch) }),
 }

@@ -186,9 +186,18 @@ export default function AdminTablesPage() {
 
     try {
       setBusyId(target.id)
+      // 1. ปิดออเดอร์ของโต๊ะนี้เป็นชำระแล้ว (เก็บไว้คิดสถิติ แต่หน้าลูกค้าจะไม่เห็น)
+      await Promise.all(
+        target.activeOrders.map((o) => api.updateOrderStatus(o.id, 'paid')),
+      )
+
+      // 2. ปิดคำขอเรียกพนักงาน/เช็กบิลที่ค้างอยู่
+      await Promise.all(
+        target.tableCalls.map((c) => api.updateServiceCall(c.id, { done: true })),
+      )
+
+      // 3. ทำสุดท้าย: รีเซ็ตโต๊ะเป็นว่าง และจำนวนคนเป็น 0
       await api.updateTable(target.id, { status: 'available', guests: 0 })
-      await Promise.all(target.tableCalls.map((c) => api.updateServiceCall(c.id, { done: true })))
-      await Promise.all(target.activeOrders.map((o) => api.updateOrderStatus(o.id, 'paid')))
 
       setClearingTable(null)
       if (inspectTable?.id === target.id) setInspectTable(null)
