@@ -396,3 +396,138 @@
   color: #14532d;
   background: #dcfce7;
 }
+
+/* Pop-up ยืนยันขอเช็กบิล (ฝั่งลูกค้า) */
+.svc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(2px);
+  animation: svc-fade-in 0.16s ease-out;
+}
+
+.svc-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  padding: 26px 22px 22px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+  text-align: center;
+  animation: svc-pop-in 0.18s ease-out;
+}
+
+.svc-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #4b5563;
+  cursor: pointer;
+}
+.svc-modal-close:hover:not(:disabled) {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.svc-modal-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 12px;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.svc-modal-title {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.svc-modal-desc {
+  margin: 0 0 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+.svc-modal-desc strong {
+  color: #b91c1c;
+}
+
+.svc-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.svc-btn-cancel,
+.svc-btn-confirm {
+  flex: 1;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.svc-btn-cancel {
+  border: 1.5px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+}
+.svc-btn-cancel:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.svc-btn-confirm {
+  border: 1.5px solid #b91c1c;
+  background: #b91c1c;
+  color: #ffffff;
+}
+.svc-btn-confirm:hover:not(:disabled) {
+  background: #991b1b;
+  border-color: #991b1b;
+}
+
+.svc-btn-cancel:disabled,
+.svc-btn-confirm:disabled,
+.svc-modal-close:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@keyframes svc-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes svc-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

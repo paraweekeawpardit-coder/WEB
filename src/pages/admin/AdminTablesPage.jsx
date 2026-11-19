@@ -1,5 +1,18 @@
 import { useCallback, useMemo, useState } from 'react'
-import { CheckCircle2, Clock, LayoutGrid, Receipt, RefreshCw, RotateCcw, Users, X } from 'lucide-react'
+import {
+  Check,
+  CheckCircle2,
+  Clock,
+  LayoutGrid,
+  Minus,
+  Plus,
+  Receipt,
+  RefreshCw,
+  RotateCcw,
+  UserPlus,
+  Users,
+  X,
+} from 'lucide-react'
 import { api } from '../../services/api'
 import usePolling from '../../hooks/usePolling'
 import BackButton from '../../components/admin/BackButton'
@@ -16,12 +29,14 @@ const STATUS_TABS = [
 ]
 
 const STATUS_META = {
-  available: { label: 'ว่าง', hint: 'พร้อมรับลูกค้า', Icon: CheckCircle2 },
+  available: { label: 'ว่าง', hint: 'กดเพื่อเปิดโต๊ะรับลูกค้า', Icon: CheckCircle2 },
   occupied: { label: 'กำลังใช้งาน', hint: 'มีลูกค้าใช้บริการ', Icon: Users },
   billing: { label: 'รอเช็กบิล', hint: 'ลูกค้าขอเช็กบิลแล้ว', Icon: Receipt },
 }
 
-// ระบบจัดการโต๊ะ: แสดงผังโต๊ะ 3 สถานะ (ว่าง / กำลังใช้งาน / รอเช็กบิล) และเคลียร์โต๊ะเมื่อลูกค้ากลับ
+const GUEST_PRESETS = [1, 2, 3, 4, 5, 6]
+
+// ระบบจัดการโต๊ะ: แอดมินเปิดโต๊ะระบุจำนวนคน / รับเรื่องเช็กบิล / เคลียร์โต๊ะเมื่อลูกค้ากลับ
 export default function AdminTablesPage() {
   const fetchAll = useCallback(async () => {
     const [tables, orders, serviceCalls] = await Promise.all([
@@ -36,13 +51,24 @@ export default function AdminTablesPage() {
 
   const [statusFilter, setStatusFilter] = useState('all')
   const [zoneFilter, setZoneFilter] = useState('all')
+  const [assignModal, setAssignModal] = useState(null) // { table, isEdit }
+  const [guestCount, setGuestCount] = useState(2)
+  const [guestError, setGuestError] = useState('')
   const [inspectTable, setInspectTable] = useState(null) // โต๊ะที่กดดูรายการอาหาร
   const [clearingTable, setClearingTable] = useState(null) // โต๊ะที่รอยืนยันการเคลียร์
   const [busyId, setBusyId] = useState(null)
+  const [refreshing, setRefreshing] = useState(false)
   const [toast, setToast] = useState(null)
 
   const closeToast = useCallback(() => setToast(null), [])
   const notify = (msg, type = 'ok') => setToast({ msg, type, id: Date.now() })
+
+  const handleRefresh = async () => {
+    setRefreshing(true)
+    await reload()
+    notify('อัปเดตข้อมูลผังโต๊ะล่าสุดแล้ว')
+    setTimeout(() => setRefreshing(false), 350)
+  }
 
   // รวมข้อมูลโต๊ะ + ออเดอร์ค้าง + คำขอเช็กบิล เข้าด้วยกัน
   const enrichedTables = useMemo(() => {
@@ -58,7 +84,6 @@ export default function AdminTablesPage() {
           ? []
           : orders.filter((o) => o.tableId === t.id && o.status !== 'paid')
 
-      // กำหนดสถานะจริงของโต๊ะ (ถ้ามีการกดขอเช็กบิล ให้แสดงเป็นรอเช็กบิลทันที)
       let effectiveStatus = t.status || 'available'
       if (effectiveStatus !== 'available' && (effectiveStatus === 'billing' || hasBillRequest)) {
         effectiveStatus = 'billing'
@@ -99,32 +124,78 @@ export default function AdminTablesPage() {
     )
   }, [enrichedTables, statusFilter, zoneFilter])
 
-  // กดยืนยันเคลียร์โต๊ะเมื่อลูกค้ากลับ
+  // เปิดหน้าต่างระบุจำนวนคน (สำหรับเปิดโต๊ะใหม่ หรือแก้ไขจำนวนคน)
+  const openAssignModal = (table, isEdit = false) => {
+    setAssignModal({ table, isEdit })
+    setGuestCount(table.guests > 0 ? table.guests : 2)
+    setGuestError('')
+  }
+
+  // บันทึกการเปิดโต๊ะ / จำนวนลูกค้า
+  const handleAssignSubmit = async (e) => {
+    e.preventDefault()
+    const count = Number(guestCount)
+    if (!Number.isInteger(count) || count < 1 || count > 50) {
+      setGuestError('กรุณาระบุจำนวนลูกค้าตั้งแต่ 1 - 50 คน')
+      return
+    }
+
+    const { table, isEdit } = assignModal
+    try {
+      setBusyId(table.id)
+      await api.updateTable(table.id, { status: 'occupied', guests: count })
+      setAssignModal(null)
+      await reload()
+      notify(
+        isEdit
+          ? `อัปเดตจำนวนลูกค้าโต๊ะ ${table.id} เป็น ${count} คนแล้ว`
+          : `เปิดโต๊ะ ${table.id} (${count} คน) เรียบร้อยแล้ว`,
+      )
+    } catch (err) {
+      notify(`บันทึกไม่สำเร็จ: ${err.message}`, 'error')
+    } finally {
+      setBusyId(null)
+    }
+  }
+
+  // รับเรื่องเช็กบิล -> ปิด serviceCall (done: true) เพื่อให้ปุ่มฝั่งลูกค้ารีเซ็ตกลับมากดใหม่ได้
+  const handleAcknowledgeBill = async (target) => {
+    try {
+      setBusyId(target.id)
+      const billCalls = target.tableCalls.filter((c) => c.type === 'bill' && !c.done)
+
+      await Promise.all(billCalls.map((c) => api.updateServiceCall(c.id, { done: true })))
+
+      if (target.status === 'billing') {
+        await api.updateTable(target.id, { status: 'occupied' })
+      }
+
+      await reload()
+      notify(`รับเรื่องเช็กบิลโต๊ะ ${target.id} แล้ว`)
+    } catch (err) {
+      notify(`รับเรื่องไม่สำเร็จ: ${err.message}`, 'error')
+    } finally {
+      setBusyId(null)
+    }
+  }
+
+  // เคลียร์โต๊ะเมื่อลูกค้าจ่ายเงินและกลับแล้ว
   const handleClearTable = async () => {
     const target = clearingTable
     if (!target) return
 
     try {
       setBusyId(target.id)
-      // 1. รีเซ็ตสถานะโต๊ะกลับเป็นว่าง และจำนวนคนเป็น 0
       await api.updateTable(target.id, { status: 'available', guests: 0 })
-
-      // 2. ปิดคำขอเรียกพนักงาน/เช็กบิลที่ค้างอยู่ของโต๊ะนี้
-      await Promise.all(
-        target.tableCalls.map((c) => api.updateServiceCall(c.id, { done: true })),
-      )
-
-      // 3. อัปเดตสถานะออเดอร์ของโต๊ะนี้เป็นชำระแล้ว (เก็บยอดไว้ในสถิติร้าน แต่ไม่ค้างในบิลรอบถัดไป)
-      await Promise.all(
-        target.activeOrders.map((o) => api.updateOrderStatus(o.id, 'paid')),
-      )
+      await Promise.all(target.tableCalls.map((c) => api.updateServiceCall(c.id, { done: true })))
+      await Promise.all(target.activeOrders.map((o) => api.updateOrderStatus(o.id, 'paid')))
 
       setClearingTable(null)
       if (inspectTable?.id === target.id) setInspectTable(null)
       await reload()
       notify(`เคลียร์โต๊ะ ${target.id} เรียบร้อยแล้ว`)
-    } catch (e) {
-      notify(`เคลียร์โต๊ะไม่สำเร็จ: ${e.message}`, 'error')
+    } catch (err) {
+      notify(`เคลียร์โต๊ะไม่สำเร็จ: ${err.message}`, 'error')
     } finally {
       setBusyId(null)
     }
@@ -212,8 +283,15 @@ export default function AdminTablesPage() {
               ))}
             </div>
 
-            <button type="button" className="adm-btn" onClick={reload} title="อัปเดตข้อมูลล่าสุด">
-              <RefreshCw size={16} aria-hidden="true" /> รีเฟรช
+            <button
+              type="button"
+              className="adm-btn"
+              onClick={handleRefresh}
+              disabled={refreshing}
+              title="อัปเดตข้อมูลล่าสุด"
+            >
+              <RefreshCw size={16} className={refreshing ? 'adm-spin' : ''} aria-hidden="true" />{' '}
+              {refreshing ? 'กำลังอัปเดต...' : 'รีเฟรช'}
             </button>
           </div>
         </div>
@@ -234,9 +312,14 @@ export default function AdminTablesPage() {
             const meta = STATUS_META[t.effectiveStatus] ?? STATUS_META.available
             const StatusIcon = meta.Icon
             const isAvailable = t.effectiveStatus === 'available'
+            const isBilling = t.effectiveStatus === 'billing'
 
             return (
-              <li key={t.id} className={`tbl-card status-${t.effectiveStatus}`}>
+              <li
+                key={t.id}
+                className={`tbl-card status-${t.effectiveStatus}${isAvailable ? ' is-clickable' : ''}`}
+                onClick={isAvailable ? () => openAssignModal(t, false) : undefined}
+              >
                 <div className="tbl-card-head">
                   <div>
                     <span className="tbl-zone">โซน {t.zone}</span>
@@ -253,10 +336,15 @@ export default function AdminTablesPage() {
                   ) : (
                     <>
                       <div className="tbl-info-row">
-                        <span>
+                        <button
+                          type="button"
+                          className="tbl-guest-pill"
+                          onClick={() => openAssignModal(t, true)}
+                          title="คลิกเพื่อแก้ไขจำนวนลูกค้า"
+                        >
                           <Users size={15} aria-hidden="true" />{' '}
-                          {t.guests > 0 ? `${t.guests} คน` : 'กำลังใช้บริการ'}
-                        </span>
+                          {t.guests > 0 ? `${t.guests} คน` : 'ระบุจำนวนคน'}
+                        </button>
                         <span>
                           <Clock size={15} aria-hidden="true" /> {t.activeOrders.length} ออเดอร์
                         </span>
@@ -269,9 +357,46 @@ export default function AdminTablesPage() {
                   )}
                 </div>
 
-                <div className="tbl-card-foot">
+                <div className="tbl-card-foot" onClick={(e) => e.stopPropagation()}>
                   {isAvailable ? (
-                    <span className="tbl-ready-label">ว่างพร้อมใช้งาน</span>
+                    <button
+                      type="button"
+                      className="adm-btn tbl-btn-open"
+                      disabled={busyId === t.id}
+                      onClick={() => openAssignModal(t, false)}
+                    >
+                      <UserPlus size={16} aria-hidden="true" /> เปิดโต๊ะรับลูกค้า
+                    </button>
+                  ) : isBilling ? (
+                    <div className="tbl-billing-actions">
+                      <button
+                        type="button"
+                        className="adm-btn tbl-btn-ack"
+                        disabled={busyId === t.id}
+                        onClick={() => handleAcknowledgeBill(t)}
+                      >
+                        <Check size={16} aria-hidden="true" />{' '}
+                        {busyId === t.id ? 'กำลังอัปเดต...' : 'รับเรื่องเช็กบิล'}
+                      </button>
+                      <div className="tbl-sub-actions">
+                        <button
+                          type="button"
+                          className="adm-btn"
+                          disabled={busyId === t.id}
+                          onClick={() => setInspectTable(t)}
+                        >
+                          ดูรายการ
+                        </button>
+                        <button
+                          type="button"
+                          className="adm-btn danger"
+                          disabled={busyId === t.id}
+                          onClick={() => setClearingTable(t)}
+                        >
+                          <RotateCcw size={15} aria-hidden="true" /> เคลียร์โต๊ะ
+                        </button>
+                      </div>
+                    </div>
                   ) : (
                     <>
                       <button
@@ -284,9 +409,7 @@ export default function AdminTablesPage() {
                       </button>
                       <button
                         type="button"
-                        className={
-                          t.effectiveStatus === 'billing' ? 'adm-btn primary' : 'adm-btn danger'
-                        }
+                        className="adm-btn danger"
                         disabled={busyId === t.id}
                         onClick={() => setClearingTable(t)}
                       >
@@ -301,9 +424,123 @@ export default function AdminTablesPage() {
         </ul>
       </div>
 
+      {/* Modal เปิดโต๊ะ / ระบุจำนวนลูกค้า */}
+      {assignModal && (
+        <div
+          className="adm-modal-bg"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`เปิดโต๊ะ ${assignModal.table.id}`}
+        >
+          <form className="adm-modal tbl-assign-modal" onSubmit={handleAssignSubmit}>
+            <div className="adm-modal-head">
+              <h2>
+                {assignModal.isEdit
+                  ? `แก้ไขจำนวนลูกค้า · โต๊ะ ${assignModal.table.id}`
+                  : `เปิดโต๊ะ ${assignModal.table.id} (โซน ${assignModal.table.zone})`}
+              </h2>
+              <button
+                type="button"
+                className="adm-icon-btn"
+                onClick={() => setAssignModal(null)}
+                aria-label="ปิด"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="tbl-preset-group">
+              <span className="tbl-preset-label">เลือกจำนวนลูกค้า</span>
+              <div className="tbl-presets">
+                {GUEST_PRESETS.map((n) => (
+                  <button
+                    key={n}
+                    type="button"
+                    className={Number(guestCount) === n ? 'tbl-preset-btn active' : 'tbl-preset-btn'}
+                    onClick={() => {
+                      setGuestCount(n)
+                      setGuestError('')
+                    }}
+                  >
+                    {n} คน
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="adm-field">
+              <span>หรือระบุจำนวนคนเอง</span>
+              <div className="tbl-stepper">
+                <button
+                  type="button"
+                  className="adm-btn"
+                  onClick={() => {
+                    setGuestCount((c) => Math.max(1, Number(c) - 1))
+                    setGuestError('')
+                  }}
+                  aria-label="ลดจำนวนคน"
+                >
+                  <Minus size={18} />
+                </button>
+                <input
+                  type="number"
+                  min={1}
+                  max={50}
+                  value={guestCount}
+                  onChange={(e) => {
+                    setGuestCount(e.target.value)
+                    setGuestError('')
+                  }}
+                  autoFocus
+                />
+                <button
+                  type="button"
+                  className="adm-btn"
+                  onClick={() => {
+                    setGuestCount((c) => Math.min(50, Number(c) + 1))
+                    setGuestError('')
+                  }}
+                  aria-label="เพิ่มจำนวนคน"
+                >
+                  <Plus size={18} />
+                </button>
+              </div>
+              {guestError && <small className="adm-field-error">{guestError}</small>}
+            </div>
+
+            <div className="adm-modal-actions">
+              <button
+                type="button"
+                className="adm-btn"
+                onClick={() => setAssignModal(null)}
+                disabled={busyId === assignModal.table.id}
+              >
+                ยกเลิก
+              </button>
+              <button
+                type="submit"
+                className="adm-btn primary"
+                disabled={busyId === assignModal.table.id}
+              >
+                {busyId === assignModal.table.id
+                  ? 'กำลังบันทึก...'
+                  : assignModal.isEdit
+                    ? 'บันทึก'
+                    : 'ยืนยัน'}
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+
       {/* Modal ดูรายการอาหารที่โต๊ะสั่ง */}
       {inspectTable && (
-        <div className="adm-modal-bg" role="dialog" aria-modal="true" aria-label={`รายการโต๊ะ ${inspectTable.id}`}>
+        <div
+          className="adm-modal-bg"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`รายการโต๊ะ ${inspectTable.id}`}
+        >
           <div className="adm-modal">
             <div className="adm-modal-head">
               <h2>
