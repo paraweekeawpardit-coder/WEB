@@ -10,6 +10,7 @@ import StaffDashboardPage from './pages/staff/StaffDashboardPage'
 import AdminHomePage from './pages/admin/AdminHomePage.jsx'
 import AdminMenuPage from './pages/admin/AdminMenuPage.jsx'
 import AdminStatsPage from './pages/admin/AdminStatsPage.jsx'
+import AdminTablesPage from './pages/admin/AdminTablesPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -31,6 +32,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/admin" element={<AdminHomePage />} />
         <Route path="/admin/menu" element={<AdminMenuPage />} />
         <Route path="/admin/stats" element={<AdminStatsPage />} />
+        <Route path="/admin/tables" element={<AdminTablesPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

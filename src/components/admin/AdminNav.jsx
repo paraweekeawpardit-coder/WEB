@@ -1,7 +1,7 @@
-import { ChartColumn, UtensilsCrossed } from 'lucide-react'
+import { ChartColumn, LayoutGrid, UtensilsCrossed } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
-// แถบเมนูของหน้าแอดมิน (ส่วนจัดการเมนู + สถิติร้าน)
+// แถบเมนูของหน้าแอดมิน (ส่วนจัดการเมนู + สถิติร้าน + จัดการโต๊ะ)
 export default function AdminNav({ title }) {
   const cls = ({ isActive }) => (isActive ? 'adm-tab active' : 'adm-tab')
 
@@ -17,6 +17,9 @@ export default function AdminNav({ title }) {
           </NavLink>
           <NavLink to="/admin/stats" className={cls}>
             <ChartColumn size={16} aria-hidden="true" /> สถิติร้าน
+          </NavLink>
+          <NavLink to="/admin/tables" className={cls}>
+            <LayoutGrid size={16} aria-hidden="true" /> จัดการโต๊ะ
           </NavLink>
         </nav>
       </header>

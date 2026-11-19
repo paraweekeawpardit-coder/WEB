@@ -45,10 +45,13 @@ export const api = {
     request(`/orders/${id}`, { method: 'PATCH', body: JSON.stringify({ status }) }),
 
   // เรียกพนักงาน / ขอเช็กบิล
+  getServiceCalls: () => request('/serviceCalls?done=false'),
   getServiceCallsByTable: (tableId) => request(`/serviceCalls?tableId=${tableId}&done=false`),
   createServiceCall: (tableId, type) =>
     request('/serviceCalls', {
       method: 'POST',
       body: JSON.stringify({ tableId, type, done: false, createdAt: new Date().toISOString() }),
     }),
+  updateServiceCall: (id, patch) =>
+    request(`/serviceCalls/${id}`, { method: 'PATCH', body: JSON.stringify(patch) }),
 }

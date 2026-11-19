@@ -101,18 +101,16 @@ export default function AdminHomePage() {
             <ArrowRight className="adm-hub-arrow" size={20} aria-hidden="true" />
           </Link>
 
-          {/* TODO: เปลี่ยนเป็น <Link to="/admin/tables"> เมื่อหน้าจัดการโต๊ะ (ส่วนของเพื่อน) เสร็จ */}
-          <div className="adm-hub-card disabled" aria-disabled="true">
+          <Link to="/admin/tables" className="adm-hub-card">
             <span className="adm-hub-icon">
               <LayoutGrid size={28} aria-hidden="true" />
             </span>
             <div>
-              <h3>
-                จัดการโต๊ะ <span className="adm-soon">เร็ว ๆ นี้</span>
-              </h3>
+              <h3>จัดการโต๊ะ</h3>
               <p>ดูสถานะและเคลียร์โต๊ะ</p>
             </div>
-          </div>
+            <ArrowRight className="adm-hub-arrow" size={20} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </main>
