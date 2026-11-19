@@ -16,7 +16,6 @@ export default function ServiceActions({ table }) {
   const isPending = (type) => (calls ?? []).some((c) => c.type === type)
 
   const send = async (type) => {
-    if (type === 'bill' && !window.confirm('ยืนยันขอเช็กบิลใช่หรือไม่')) return
     setBusy(type)
     setError('')
     try {

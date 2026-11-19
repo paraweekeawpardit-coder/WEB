@@ -7,17 +7,17 @@
     },
     {
       "id": "A02",
-      "status": "occupied",
+      "status": "available",
       "guests": 0
     },
     {
       "id": "A03",
-      "status": "occupied",
+      "status": "available",
       "guests": 0
     },
     {
       "id": "A04",
-      "status": "available",
+      "status": "occupied",
       "guests": 0
     },
     {
@@ -74,7 +74,7 @@
       "name": "ลูกชิ้นรวม",
       "category": "meatball",
       "price": 69,
-      "available": false,
+      "available": true,
       "image": ""
     },
     {
@@ -100,6 +100,14 @@
       "image": "",
       "available": true,
       "id": 8
+    },
+    {
+      "name": "วุ้นเส้น",
+      "category": "other",
+      "price": 10,
+      "image": "",
+      "available": true,
+      "id": 9
     }
   ],
   "orders": [
@@ -198,9 +206,78 @@
         }
       ],
       "total": 99,
-      "status": "pending",
+      "status": "paid",
       "createdAt": "2026-11-19T06:57:21.772Z",
       "id": 5
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        }
+      ],
+      "total": 554,
+      "status": "paid",
+      "createdAt": "2026-11-19T13:00:43.850Z",
+      "id": 6
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 9
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 8
+        }
+      ],
+      "total": 1723,
+      "status": "paid",
+      "createdAt": "2026-11-19T13:20:23.199Z",
+      "id": 7
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 5
+        }
+      ],
+      "total": 195,
+      "status": "pending",
+      "createdAt": "2026-11-19T14:25:22.243Z",
+      "id": 8
     }
   ],
   "serviceCalls": [
@@ -221,9 +298,23 @@
     {
       "tableId": "A03",
       "type": "bill",
-      "done": false,
+      "done": true,
       "createdAt": "2026-11-19T07:03:52.228Z",
       "id": 3
+    },
+    {
+      "tableId": "A01",
+      "type": "call",
+      "done": true,
+      "createdAt": "2026-11-19T13:55:36.113Z",
+      "id": 4
+    },
+    {
+      "tableId": "A04",
+      "type": "bill",
+      "done": false,
+      "createdAt": "2026-11-19T14:29:01.565Z",
+      "id": 5
     }
   ]
 }
