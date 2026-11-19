@@ -21,7 +21,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/customer/menu" element={<MenuPage />} />
         <Route path="/customer/bill" element={<BillPage />} />
         <Route
-          path="/staff"
+          path="/staff/StaffDashboardPage"
           element={
             <p style={{ padding: 24 }}>
               หน้าพนักงานยังไม่ได้ทำ · <Link to="/staff/tables">ตั้งค่าโต๊ะ / จำนวนคน</Link>
