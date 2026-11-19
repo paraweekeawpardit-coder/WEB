@@ -2,8 +2,8 @@
   "tables": [
     {
       "id": "A01",
-      "status": "available",
-      "guests": 0
+      "status": "occupied",
+      "guests": 5
     },
     {
       "id": "A02",
@@ -12,13 +12,13 @@
     },
     {
       "id": "A03",
-      "status": "available",
-      "guests": 0
+      "status": "occupied",
+      "guests": 4
     },
     {
       "id": "A04",
       "status": "occupied",
-      "guests": 0
+      "guests": 1
     },
     {
       "id": "A05",
@@ -32,8 +32,8 @@
     },
     {
       "id": "B02",
-      "status": "available",
-      "guests": 0
+      "status": "occupied",
+      "guests": 2
     }
   ],
   "menus": [
@@ -278,6 +278,21 @@
       "status": "pending",
       "createdAt": "2026-11-19T14:25:22.243Z",
       "id": 8
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 298,
+      "status": "pending",
+      "createdAt": "2026-11-19T15:04:30.434Z",
+      "id": 9
     }
   ],
   "serviceCalls": [
@@ -315,6 +330,20 @@
       "done": false,
       "createdAt": "2026-11-19T14:29:01.565Z",
       "id": 5
+    },
+    {
+      "tableId": "A03",
+      "type": "bill",
+      "done": false,
+      "createdAt": "2026-11-19T15:04:41.995Z",
+      "id": 6
+    },
+    {
+      "tableId": "A03",
+      "type": "call",
+      "done": true,
+      "createdAt": "2026-11-19T15:04:44.147Z",
+      "id": 7
     }
   ]
 }
