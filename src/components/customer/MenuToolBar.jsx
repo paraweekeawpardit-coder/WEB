@@ -7,6 +7,7 @@ export const CATEGORIES = [
   { id: 'meatball', label: 'ลูกชิ้น' },
   { id: 'soup', label: 'น้ำซุป' },
   { id: 'drink', label: 'เครื่องดื่ม' },
+  { id: 'other', label: 'อื่น ๆ' },
 ]
 
 // ช่องค้นหา + แท็บหมวดหมู่

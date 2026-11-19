@@ -7,10 +7,9 @@ import WelcomePage from './pages/customer/WelcomePage.jsx'
 import MenuPage from './pages/customer/MenuPage.jsx'
 import BillPage from './pages/customer/BillPage.jsx'
 import StaffDashboardPage from './pages/staff/StaffDashboardPage'
-
-const Placeholder = ({ name }) => (
-  <p style={{ padding: 24 }}>หน้า {name} ยังไม่ได้ทำ</p>
-)
+import AdminHomePage from './pages/admin/AdminHomePage.jsx'
+import AdminMenuPage from './pages/admin/AdminMenuPage.jsx'
+import AdminStatsPage from './pages/admin/AdminStatsPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -29,7 +28,9 @@ createRoot(document.getElementById('root')).render(
           }
         />
         <Route path="/staff" element={<StaffDashboardPage />} />
-        <Route path="/admin" element={<Placeholder name="แอดมิน" />} />
+        <Route path="/admin" element={<AdminHomePage />} />
+        <Route path="/admin/menu" element={<AdminMenuPage />} />
+        <Route path="/admin/stats" element={<AdminStatsPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
