@@ -34,7 +34,6 @@ export default function OrderCard({ order, onUpdateStatus, isUpdating }) {
       </ul>
 
       <div className="order-card-footer">
-        <span className="order-total">รวม {order.total?.toLocaleString()} ฿</span>
         {nextStep && (
           <button
             className={`status-action-btn ${nextStep.btnClass}`}
