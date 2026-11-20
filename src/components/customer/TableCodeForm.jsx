@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { normalizeTable } from '../../services/tableService'
+import { normalizeTable } from '../../services/TableService'
 
 // onSubmit(code) ต้องคืน Promise ที่ throw Error(message) เมื่อเข้าโต๊ะไม่สำเร็จ
 export default function TableCodeForm({ initialValue = '', initialError = '', onSubmit }) {
