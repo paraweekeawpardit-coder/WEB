@@ -41,7 +41,6 @@ export default function WelcomePage() {
     }
   }, [fromUrl])
 
-  // ใช้ร่วมกันทั้งฟอร์ม, ปุ่มสแกน และลิงก์ QR
   const enter = async (code) => {
     let table
     try {
