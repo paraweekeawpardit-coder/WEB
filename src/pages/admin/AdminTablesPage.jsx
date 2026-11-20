@@ -9,6 +9,7 @@ import TableCard from '../../components/admin/TableCard'
 import AssignTableModal from '../../components/admin/AssignTableModal'
 import InspectTableModal from '../../components/admin/InspectTableModal'
 import ClearTableModal from '../../components/admin/ClearTableModal'
+import TableQrModal from '../../components/admin/TableQrModal'
 import { BUFFET_PRICE, SERVICE_RATE, VAT_RATE } from '../../../config/picing'
 import './AdminPages.css'
 
@@ -35,6 +36,7 @@ export default function AdminTablesPage() {
   const [statusFilter, setStatusFilter] = useState('all')
   const [zoneFilter, setZoneFilter] = useState('all')
   const [assignModal, setAssignModal] = useState(null) // { table, isEdit }
+  const [qrTable, setQrTable] = useState(null) // โต๊ะที่กำลังเปิดดู QR Code
   const [inspectTable, setInspectTable] = useState(null) // โต๊ะที่กดดูรายการอาหาร
   const [clearingTable, setClearingTable] = useState(null) // โต๊ะที่รอยืนยันการเคลียร์
   const [busyId, setBusyId] = useState(null)
@@ -143,6 +145,15 @@ export default function AdminTablesPage() {
           ? `อัปเดตจำนวนลูกค้าโต๊ะ ${table.id} เป็น ${count} คนแล้ว`
           : `เปิดโต๊ะ ${table.id} (${count} คน) เรียบร้อยแล้ว`,
       )
+      // ถ้าเป็นการเปิดโต๊ะใหม่ ให้เด้ง QR Code ของโต๊ะขึ้นมาทันที
+      if (!isEdit) {
+        setQrTable({
+          ...table,
+          guests: count,
+          mode,
+          isBuffet: mode === 'buffet',
+        })
+      }
     } catch (err) {
       notify(`บันทึกไม่สำเร็จ: ${err.message}`, 'error')
     } finally {
@@ -308,6 +319,7 @@ export default function AdminTablesPage() {
               onOpenAssign={openAssignModal}
               onAcknowledgeBill={handleAcknowledgeBill}
               onInspect={setInspectTable}
+              onShowQr={setQrTable}
               onClear={setClearingTable}
             />
           ))}
@@ -321,6 +333,14 @@ export default function AdminTablesPage() {
           busy={busyId === assignModal.table.id}
           onSubmit={handleAssignSubmit}
           onClose={() => setAssignModal(null)}
+        />
+      )}
+
+      {qrTable && (
+        <TableQrModal
+          table={qrTable}
+          onClose={() => setQrTable(null)}
+          onNotify={notify}
         />
       )}
 

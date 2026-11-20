@@ -2,6 +2,7 @@ import {
   Check,
   CheckCircle2,
   Clock,
+  QrCode,
   Receipt,
   RotateCcw,
   UserPlus,
@@ -17,18 +18,62 @@ const STATUS_META = {
   billing: { label: 'รอเช็กบิล', hint: 'ลูกค้าขอเช็กบิลแล้ว', Icon: Receipt },
 }
 
+const ROW_STYLE = { display: 'flex', gap: 6, width: '100%' }
+const QR_BTN_STYLE = { padding: '8px 10px', flex: '0 0 auto', whiteSpace: 'nowrap' }
+const ACTION_BTN_STYLE = {
+  padding: '8px 6px',
+  flex: 1,
+  minWidth: 0,
+  fontSize: '0.82rem',
+  whiteSpace: 'nowrap',
+}
+
 export default function TableCard({
   table: t,
   busy,
   onOpenAssign,
   onAcknowledgeBill,
   onInspect,
+  onShowQr,
   onClear,
 }) {
   const meta = STATUS_META[t.effectiveStatus] ?? STATUS_META.available
   const StatusIcon = meta.Icon
   const isAvailable = t.effectiveStatus === 'available'
   const isBilling = t.effectiveStatus === 'billing'
+
+  const renderActionButtons = () => (
+    <div style={ROW_STYLE}>
+      <button
+        type="button"
+        className="adm-btn"
+        style={QR_BTN_STYLE}
+        disabled={busy}
+        onClick={() => onShowQr(t)}
+        title="แสดง QR Code ประจำโต๊ะ"
+      >
+        <QrCode size={15} aria-hidden="true" /> QR
+      </button>
+      <button
+        type="button"
+        className="adm-btn"
+        style={ACTION_BTN_STYLE}
+        disabled={busy}
+        onClick={() => onInspect(t)}
+      >
+        ดูรายการ
+      </button>
+      <button
+        type="button"
+        className="adm-btn danger"
+        style={ACTION_BTN_STYLE}
+        disabled={busy}
+        onClick={() => onClear(t)}
+      >
+        <RotateCcw size={14} aria-hidden="true" /> เคลียร์โต๊ะ
+      </button>
+    </div>
+  )
 
   return (
     <li
@@ -84,54 +129,21 @@ export default function TableCard({
             <UserPlus size={16} aria-hidden="true" /> เปิดโต๊ะรับลูกค้า
           </button>
         ) : isBilling ? (
-          <div className="tbl-billing-actions">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%' }}>
             <button
               type="button"
               className="adm-btn tbl-btn-ack"
+              style={{ width: '100%', justifyContent: 'center' }}
               disabled={busy}
               onClick={() => onAcknowledgeBill(t)}
             >
               <Check size={16} aria-hidden="true" />{' '}
               {busy ? 'กำลังอัปเดต...' : 'รับเรื่องเช็กบิล'}
             </button>
-            <div className="tbl-sub-actions">
-              <button
-                type="button"
-                className="adm-btn"
-                disabled={busy}
-                onClick={() => onInspect(t)}
-              >
-                ดูรายการ
-              </button>
-              <button
-                type="button"
-                className="adm-btn danger"
-                disabled={busy}
-                onClick={() => onClear(t)}
-              >
-                <RotateCcw size={15} aria-hidden="true" /> เคลียร์โต๊ะ
-              </button>
-            </div>
+            {renderActionButtons()}
           </div>
         ) : (
-          <>
-            <button
-              type="button"
-              className="adm-btn"
-              disabled={busy}
-              onClick={() => onInspect(t)}
-            >
-              ดูรายการ
-            </button>
-            <button
-              type="button"
-              className="adm-btn danger"
-              disabled={busy}
-              onClick={() => onClear(t)}
-            >
-              <RotateCcw size={15} aria-hidden="true" /> เคลียร์โต๊ะ
-            </button>
-          </>
+          renderActionButtons()
         )}
       </div>
     </li>
