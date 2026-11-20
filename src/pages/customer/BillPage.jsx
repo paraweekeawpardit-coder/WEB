@@ -106,11 +106,11 @@ export default function BillPage() {
                   <dd>{baht(bill.subtotal)}</dd>
                 </div>
                 <div>
-                  <dt>ค่าบริการ {SERVICE_RATE * 100}%</dt>
+                  <dt>ค่าบริการ {Number((SERVICE_RATE * 100).toFixed(2))}%</dt>
                   <dd>{baht(bill.service)}</dd>
                 </div>
                 <div>
-                  <dt>ภาษีมูลค่าเพิ่ม {VAT_RATE * 100}%</dt>
+                  <dt>ภาษีมูลค่าเพิ่ม {Number((VAT_RATE * 100).toFixed(2))}%</dt>
                   <dd>{baht(bill.vat)}</dd>
                 </div>
                 <div className="grand">
