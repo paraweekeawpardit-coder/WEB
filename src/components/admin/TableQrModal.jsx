@@ -20,14 +20,41 @@ export default function TableQrModal({ table, onClose, onNotify }) {
       aria-modal="true"
       aria-label={`QR Code โต๊ะ ${table.id}`}
     >
-      <div className="adm-modal" style={{ maxWidth: 430, textAlign: 'center' }}>
-        <div className="adm-modal-head">
-          <h2 style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <QrCode size={20} aria-hidden="true" /> QR Code สั่งอาหาร
+      <div
+        className="adm-modal"
+        style={{
+          width: '100%',
+          maxWidth: 'min(430px, 100%)',
+          boxSizing: 'border-box',
+          textAlign: 'center',
+        }}
+      >
+        <div
+          className="adm-modal-head"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 8,
+          }}
+        >
+          <h2
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+              margin: 0,
+              fontSize: '1.15rem',
+              minWidth: 0,
+            }}
+          >
+            <QrCode size={20} style={{ flexShrink: 0 }} aria-hidden="true" />
+            <span>QR Code สั่งอาหาร</span>
           </h2>
           <button
             type="button"
             className="adm-icon-btn"
+            style={{ flexShrink: 0 }}
             onClick={onClose}
             aria-label="ปิด"
           >
@@ -42,12 +69,16 @@ export default function TableQrModal({ table, onClose, onNotify }) {
             flexDirection: 'column',
             alignItems: 'center',
             gap: 12,
-            padding: '20px 16px',
+            padding: '16px 12px',
+            width: '100%',
+            maxWidth: '100%',
+            boxSizing: 'border-box',
+            overflow: 'hidden',
           }}
         >
           <div>
             <span className="tbl-zone">โซน {table.zone}</span>
-            <h3 style={{ margin: '4px 0', fontSize: '1.5rem' }}>โต๊ะ {table.id}</h3>
+            <h3 style={{ margin: '4px 0', fontSize: '1.45rem' }}>โต๊ะ {table.id}</h3>
             <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.75 }}>
               {table.guests} คน · {table.isBuffet ? 'บุฟเฟ่ต์' : 'อาลาคาร์ต'}
             </p>
@@ -56,15 +87,17 @@ export default function TableQrModal({ table, onClose, onNotify }) {
           <div
             style={{
               background: '#fff',
-              padding: 14,
+              padding: 12,
               borderRadius: 12,
               border: '1px solid #e5e7eb',
+              maxWidth: '100%',
+              boxSizing: 'border-box',
             }}
           >
-            <QRCodeSVG value={menuUrl} size={190} level="M" />
+            <QRCodeSVG value={menuUrl} size={170} level="M" />
           </div>
 
-          <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.8 }}>
+          <p style={{ margin: 0, fontSize: '0.84rem', opacity: 0.8 }}>
             สแกน QR Code เพื่อเปิดเมนูและสั่งอาหารของโต๊ะ {table.id}
           </p>
 
@@ -72,10 +105,12 @@ export default function TableQrModal({ table, onClose, onNotify }) {
             title={menuUrl}
             style={{
               display: 'block',
+              width: '100%',
               maxWidth: '100%',
+              boxSizing: 'border-box',
               fontSize: '0.72rem',
               background: 'rgba(0,0,0,0.05)',
-              padding: '7px 12px',
+              padding: '7px 10px',
               borderRadius: 6,
               whiteSpace: 'nowrap',
               overflow: 'hidden',
@@ -86,7 +121,10 @@ export default function TableQrModal({ table, onClose, onNotify }) {
           </code>
         </div>
 
-        <div className="adm-modal-actions" style={{ justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div
+          className="adm-modal-actions"
+          style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 8 }}
+        >
           <button type="button" className="adm-btn" onClick={handleCopyLink}>
             <Copy size={15} aria-hidden="true" /> คัดลอกลิงก์
           </button>
