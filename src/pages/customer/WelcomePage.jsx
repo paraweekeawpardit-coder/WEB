@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import WelcomeHeader from '../../components/customer/WelcomeHeader'
-import TableCodeForm from '../../components/customer/TableCodeForm'
 import QrScanBox from '../../components/customer/QrScanBox'
-import FeaturedFoods from '../../components/customer/FeatureFoods'
-import { findTable, normalizeTable, openTable } from "../../services/TableService"
+import FeaturedFoods from "../../components/customer/FeatureFoods"
+import { findTable, normalizeTable, openTable } from '../../services/TableService'
 import './WelcomePage.css'
 
 export default function WelcomePage() {
@@ -41,6 +40,7 @@ export default function WelcomePage() {
     }
   }, [fromUrl])
 
+  // ใช้ร่วมกันทั้งฟอร์ม, ปุ่มสแกน และลิงก์ QR
   const enter = async (code) => {
     let table
     try {
@@ -72,11 +72,9 @@ export default function WelcomePage() {
           </button>
         ) : (
           <>
-            <TableCodeForm
-              initialValue={urlError ? '' : fromUrl}
-              initialError={urlError}
-              onSubmit={enter}
-            />
+            <p className="or">
+              {urlError || 'กรุณาสแกน QR Code ที่โต๊ะ หรือเปิดลิงก์ที่พนักงานให้'}
+            </p>
             <QrScanBox
               onScan={(code) => {
                 setScanError('')

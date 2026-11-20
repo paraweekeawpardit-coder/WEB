@@ -11,6 +11,7 @@
     "api": "json-server --watch db.json --port 3001 --host 0.0.0.0"
   },
   "dependencies": {
+    "jsqr": "^1.4.0",
     "lucide-react": "^1.74.0",
     "qrcode.react": "^4.2.0",
     "react": "^19.3.1",

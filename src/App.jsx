@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { logout } from './services/auth'
 import './App.css'
 
-// เปลี่ยน path ให้ตรงกับ route จริงของโปรเจกต์
 const ROLES = [
   {
     id: 'customer',
@@ -11,7 +11,7 @@ const ROLES = [
     href: '/customer/welcome',
     cta: 'เริ่มสั่งอาหาร',
     features: [
-      'สแกน QR Code ประจำโต๊ะ หรือกรอกเลขโต๊ะเพื่อเริ่มสั่ง',
+      'สแกน QR Code ประจำโต๊ะ (หรือเปิดลิงก์ของโต๊ะ) เพื่อเริ่มสั่ง',
       'เลือกหมวดหมู่ ค้นหา และกรองเมนู แล้วเพิ่มลงตะกร้า',
       'ดูสถานะอาหารแบบเรียลไทม์: รอรับออเดอร์ → กำลังเตรียม → เสิร์ฟแล้ว',
       'กดเรียกพนักงาน (Service Call) หรือขอเช็กบิล (Bill Request)',
@@ -53,21 +53,19 @@ function Tick() {
 function App() {
   const navigate = useNavigate()
   const [roleId, setRoleId] = useState(null)
-  const [table, setTable] = useState('')
+
+  // เคลียร์สิทธิ์เดิมทุกครั้งที่กลับมาหน้าเลือกบทบาท เพื่อให้ต้องกรอกรหัสผ่านใหม่เสมอ
+  useEffect(() => {
+    logout()
+  }, [])
 
   const role = ROLES.find((r) => r.id === roleId)
-  const tableCode = table.trim().toUpperCase()
-  const needsTable = roleId === 'customer'
-  const ready = role && (!needsTable || tableCode)
+  const ready = !!role
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!ready) return
-    navigate(
-      needsTable
-        ? `${role.href}?table=${encodeURIComponent(tableCode)}`
-        : role.href,
-    )
+    navigate(role.href)
   }
 
   return (
@@ -108,19 +106,8 @@ function App() {
                       ))}
                     </ul>
 
-                    {r.id === 'customer' && (
-                      <div className="table-field">
-                        <label htmlFor="table">โต๊ะที่</label>
-                        <input
-                          id="table"
-                          value={table}
-                          onChange={(e) => setTable(e.target.value)}
-                          placeholder="A01"
-                          autoComplete="off"
-                          maxLength={6}
-                        />
-                        <span className="or">หรือสแกน QR Code บนโต๊ะ</span>
-                      </div>
+                    {r.id !== 'customer' && (
+                      <p className="or">ต้องใส่รหัสผ่านเพื่อเข้าใช้งาน</p>
                     )}
                   </div>
                 )}
@@ -130,11 +117,7 @@ function App() {
         </fieldset>
 
         <button className="go" type="submit" disabled={!ready}>
-          {!role
-            ? 'เลือกบทบาทก่อน'
-            : needsTable && !tableCode
-              ? 'กรอกเลขโต๊ะก่อน'
-              : role.cta}
+          {role ? role.cta : 'เลือกบทบาทก่อน'}
         </button>
       </form>
     </main>
