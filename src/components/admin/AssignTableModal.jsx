@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Minus, Plus, X } from 'lucide-react'
 
 const GUEST_PRESETS = [1, 2, 3, 4, 5, 6]
+const MAX_GUESTS = 12
 
 export default function AssignTableModal({ table, isEdit, busy, onSubmit, onClose }) {
   const [guestCount, setGuestCount] = useState(table.guests > 0 ? table.guests : 2)
@@ -11,8 +12,8 @@ export default function AssignTableModal({ table, isEdit, busy, onSubmit, onClos
   const handleFormSubmit = (e) => {
     e.preventDefault()
     const count = Number(guestCount)
-    if (!Number.isInteger(count) || count < 1 || count > 50) {
-      setGuestError('กรุณาระบุจำนวนลูกค้าตั้งแต่ 1 - 50 คน')
+    if (!Number.isInteger(count) || count < 1 || count > MAX_GUESTS) {
+      setGuestError(`กรุณาระบุจำนวนลูกค้าตั้งแต่ 1 - ${MAX_GUESTS} คน`)
       return
     }
     onSubmit(count, tableMode)
@@ -25,7 +26,11 @@ export default function AssignTableModal({ table, isEdit, busy, onSubmit, onClos
       aria-modal="true"
       aria-label={`เปิดโต๊ะ ${table.id}`}
     >
-      <form className="adm-modal tbl-assign-modal" onSubmit={handleFormSubmit}>
+      <form
+        className="adm-modal tbl-assign-modal"
+        onSubmit={handleFormSubmit}
+        noValidate
+      >
         <div className="adm-modal-head">
           <h2>
             {isEdit
@@ -44,9 +49,13 @@ export default function AssignTableModal({ table, isEdit, busy, onSubmit, onClos
 
         <div className="tbl-preset-group">
           <span className="tbl-preset-label">รูปแบบการให้บริการ</span>
-          <div className="tbl-presets">
+          <div
+            className="tbl-presets"
+            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}
+          >
             <button
               type="button"
+              style={{ whiteSpace: 'nowrap' }}
               className={tableMode === 'buffet' ? 'tbl-preset-btn active' : 'tbl-preset-btn'}
               onClick={() => setTableMode('buffet')}
             >
@@ -54,6 +63,7 @@ export default function AssignTableModal({ table, isEdit, busy, onSubmit, onClos
             </button>
             <button
               type="button"
+              style={{ whiteSpace: 'nowrap' }}
               className={tableMode === 'alacarte' ? 'tbl-preset-btn active' : 'tbl-preset-btn'}
               onClick={() => setTableMode('alacarte')}
             >
@@ -82,7 +92,7 @@ export default function AssignTableModal({ table, isEdit, busy, onSubmit, onClos
         </div>
 
         <div className="adm-field">
-          <span>หรือระบุจำนวนคนเอง</span>
+          <span>หรือระบุจำนวนคนเอง (สูงสุด {MAX_GUESTS} คน)</span>
           <div className="tbl-stepper">
             <button
               type="button"
@@ -98,7 +108,7 @@ export default function AssignTableModal({ table, isEdit, busy, onSubmit, onClos
             <input
               type="number"
               min={1}
-              max={50}
+              max={MAX_GUESTS}
               value={guestCount}
               onChange={(e) => {
                 setGuestCount(e.target.value)
@@ -110,7 +120,7 @@ export default function AssignTableModal({ table, isEdit, busy, onSubmit, onClos
               type="button"
               className="adm-btn"
               onClick={() => {
-                setGuestCount((c) => Math.min(50, Number(c) + 1))
+                setGuestCount((c) => Math.min(MAX_GUESTS, Number(c) + 1))
                 setGuestError('')
               }}
               aria-label="เพิ่มจำนวนคน"
