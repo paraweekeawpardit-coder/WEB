@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useSearchParams } from 'react-router-dom'
-import MenuToolbar from '../../components/customer/MenuToolbar'
+import MenuToolbar from '../../components/customer/MenuToolBar'
 import MenuCard from '../../components/customer/MenuCard'
 import CartPanel from '../../components/customer/CartPanel'
 import OrderStatus from '../../components/customer/OrderStatus'
