@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BellRing, Check, Clock } from 'lucide-react'
 import { api } from '../../services/api'
@@ -20,11 +20,19 @@ export default function StaffDashboardPage() {
 
   const { data, error, loading, reload } = usePolling(fetchDashboardData, 4000)
 
+  const [tables, setTables] = useState([])
+  const [selectedTable, setSelectedTable] = useState('all')
   const [statusFilter, setStatusFilter] = useState('all')
   const [searchTable, setSearchTable] = useState('')
   const [updatingId, setUpdatingId] = useState(null)
   const [busyCallId, setBusyCallId] = useState(null)
+  const [isRefreshing, setIsRefreshing] = useState(false)
   const [notice, setNotice] = useState('')
+
+  // ดึงรายชื่อโต๊ะทั้งหมดมาใส่ในตัวเลือกกรองโต๊ะ
+  useEffect(() => {
+    api.getTables().then(setTables).catch(() => setTables([]))
+  }, [])
 
   // กรองเฉพาะออเดอร์รอบปัจจุบัน (ซ่อนบิลเก่าที่แอดมินเคลียร์โต๊ะเป็น paid แล้ว)
   const activeOrders = useMemo(
@@ -38,22 +46,49 @@ export default function StaffDashboardPage() {
     [data],
   )
 
+  // นับจำนวนออเดอร์ (active นับเฉพาะที่รอรับ + กำลังทำ ไม่รวมเสิร์ฟแล้ว)
   const counts = useMemo(() => {
+    const pending = activeOrders.filter((o) => o.status === 'pending').length
+    const preparing = activeOrders.filter((o) => o.status === 'preparing').length
+    const served = activeOrders.filter((o) => o.status === 'served').length
     return {
-      all: activeOrders.length,
-      pending: activeOrders.filter((o) => o.status === 'pending').length,
-      preparing: activeOrders.filter((o) => o.status === 'preparing').length,
-      served: activeOrders.filter((o) => o.status === 'served').length,
+      active: pending + preparing,
+      pending,
+      preparing,
+      served,
     }
   }, [activeOrders])
 
+  // กรองออเดอร์ตามสถานะ (แท็บแรกตัด served ออก), Dropdown โต๊ะ และช่องค้นหา
   const filteredOrders = useMemo(() => {
     return activeOrders.filter((order) => {
-      const matchStatus = statusFilter === 'all' || order.status === statusFilter
-      const matchTable = order.tableId.toLowerCase().includes(searchTable.trim().toLowerCase())
-      return matchStatus && matchTable
+      const matchStatus =
+        statusFilter === 'all'
+          ? order.status !== 'served'
+          : order.status === statusFilter
+
+      const matchDropdownTable =
+        selectedTable === 'all' || order.tableId === selectedTable
+
+      const matchSearchTable = order.tableId
+        .toLowerCase()
+        .includes(searchTable.trim().toLowerCase())
+
+      return matchStatus && matchDropdownTable && matchSearchTable
     })
-  }, [activeOrders, statusFilter, searchTable])
+  }, [activeOrders, statusFilter, selectedTable, searchTable])
+
+  // ปุ่มรีเฟรชข้อมูลพร้อมแสดงสถานะและแจ้งเตือนสั้นๆ
+  const handleManualRefresh = async () => {
+    try {
+      setIsRefreshing(true)
+      await reload()
+      setNotice('อัปเดตข้อมูลบิลล่าสุดแล้ว')
+      setTimeout(() => setNotice(''), 2500)
+    } finally {
+      setTimeout(() => setIsRefreshing(false), 300)
+    }
+  }
 
   const handleUpdateStatus = async (orderId, nextStatus) => {
     try {
@@ -84,7 +119,7 @@ export default function StaffDashboardPage() {
   }
 
   const emptyMessages = {
-    all: '🍲 ตอนนี้ยังไม่มีออเดอร์สุกี้เข้าครัว รอรับออเดอร์จากโต๊ะลูกค้าได้เลย!',
+    all: '🍲 ตอนนี้ไม่มีออเดอร์ค้างในครัว เสิร์ฟครบทุกโต๊ะแล้ว!',
     pending: '✨ รับออเดอร์ครบทุกโต๊ะแล้ว ไม่มีรายการรอรับในขณะนี้',
     preparing: '🔥 ครัวว่างอยู่! ไม่มีรายการที่กำลังเตรียมเสิร์ฟ',
     served: '🥢 ยังไม่มีรายการที่เสิร์ฟแล้วในรอบนี้',
@@ -93,7 +128,6 @@ export default function StaffDashboardPage() {
   return (
     <main className="cloth staff-bg">
       <div className="staff-container">
-        {/* แผ่นกระดานสีขาวทึบขนาดใหญ่ คลุมพื้นที่ทำงานทั้งหมดไม่ให้ลายแดงแทรก */}
         <div className="staff-workspace">
           <header className="staff-header">
             <div className="header-left">
@@ -103,8 +137,12 @@ export default function StaffDashboardPage() {
               <h1>แดชบอร์ดจัดการออร์เดอร์ (พนักงาน)</h1>
             </div>
 
-            <button className="reload-btn" onClick={reload}>
-              ↻ รีเฟรชข้อมูล
+            <button
+              className="reload-btn"
+              onClick={handleManualRefresh}
+              disabled={isRefreshing}
+            >
+              {isRefreshing ? '⏳ กำลังรีเฟรช...' : '↻ รีเฟรชข้อมูล'}
             </button>
           </header>
 
@@ -151,6 +189,9 @@ export default function StaffDashboardPage() {
           )}
 
           <OrderFilterBar
+            tables={tables}
+            selectedTable={selectedTable}
+            onSelectTable={setSelectedTable}
             searchTable={searchTable}
             onSearchChange={setSearchTable}
             statusFilter={statusFilter}
@@ -171,8 +212,8 @@ export default function StaffDashboardPage() {
           {!loading && !error && filteredOrders.length === 0 && (
             <div className="state-msg">
               <p className="empty-title">
-                {searchTable.trim()
-                  ? `🔍 ไม่พบออเดอร์ของโต๊ะ "${searchTable.toUpperCase()}" ในหมวดหมู่นี้`
+                {selectedTable !== 'all' || searchTable.trim()
+                  ? '🔍 ไม่พบออเดอร์ของโต๊ะที่เลือกในหมวดหมู่นี้'
                   : emptyMessages[statusFilter]}
               </p>
               <span className="empty-sub">ระบบจะอัปเดตบิลอัตโนมัติทันทีเมื่อลูกค้าสั่งอาหาร</span>
