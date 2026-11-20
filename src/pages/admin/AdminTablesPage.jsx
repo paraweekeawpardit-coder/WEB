@@ -54,6 +54,7 @@ export default function AdminTablesPage() {
   const [assignModal, setAssignModal] = useState(null) // { table, isEdit }
   const [guestCount, setGuestCount] = useState(2)
   const [guestError, setGuestError] = useState('')
+  const [tableMode, setTableMode] = useState('buffet') // buffet | alacarte
   const [inspectTable, setInspectTable] = useState(null) // โต๊ะที่กดดูรายการอาหาร
   const [clearingTable, setClearingTable] = useState(null) // โต๊ะที่รอยืนยันการเคลียร์
   const [busyId, setBusyId] = useState(null)
@@ -128,6 +129,7 @@ export default function AdminTablesPage() {
   const openAssignModal = (table, isEdit = false) => {
     setAssignModal({ table, isEdit })
     setGuestCount(table.guests > 0 ? table.guests : 2)
+    setTableMode(table.mode ?? 'buffet')
     setGuestError('')
   }
 
@@ -143,7 +145,7 @@ export default function AdminTablesPage() {
     const { table, isEdit } = assignModal
     try {
       setBusyId(table.id)
-      await api.updateTable(table.id, { status: 'occupied', guests: count })
+      await api.updateTable(table.id, { status: 'occupied', guests: count, mode: tableMode })
       setAssignModal(null)
       await reload()
       notify(
@@ -197,7 +199,7 @@ export default function AdminTablesPage() {
       )
 
       // 3. ทำสุดท้าย: รีเซ็ตโต๊ะเป็นว่าง และจำนวนคนเป็น 0
-      await api.updateTable(target.id, { status: 'available', guests: 0 })
+      await api.updateTable(target.id, { status: 'available', guests: 0, mode: 'buffet' })
 
       setClearingTable(null)
       if (inspectTable?.id === target.id) setInspectTable(null)
@@ -352,7 +354,8 @@ export default function AdminTablesPage() {
                           title="คลิกเพื่อแก้ไขจำนวนลูกค้า"
                         >
                           <Users size={15} aria-hidden="true" />{' '}
-                          {t.guests > 0 ? `${t.guests} คน` : 'ระบุจำนวนคน'}
+                          {t.guests > 0 ? `${t.guests} คน` : 'ระบุจำนวนคน'} ·{' '}
+                          {t.mode === 'alacarte' ? 'อาลาคาร์ต' : 'บุฟเฟ่ต์'}
                         </button>
                         <span>
                           <Clock size={15} aria-hidden="true" /> {t.activeOrders.length} ออเดอร์
@@ -456,6 +459,26 @@ export default function AdminTablesPage() {
               >
                 <X size={18} />
               </button>
+            </div>
+
+            <div className="tbl-preset-group">
+              <span className="tbl-preset-label">รูปแบบการให้บริการ</span>
+              <div className="tbl-presets">
+                <button
+                  type="button"
+                  className={tableMode === 'buffet' ? 'tbl-preset-btn active' : 'tbl-preset-btn'}
+                  onClick={() => setTableMode('buffet')}
+                >
+                  บุฟเฟ่ต์
+                </button>
+                <button
+                  type="button"
+                  className={tableMode === 'alacarte' ? 'tbl-preset-btn active' : 'tbl-preset-btn'}
+                  onClick={() => setTableMode('alacarte')}
+                >
+                  อาลาคาร์ต
+                </button>
+              </div>
             </div>
 
             <div className="tbl-preset-group">

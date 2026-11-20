@@ -1,10 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { normalizeTable } from '../../services/tableService'
 
 // onSubmit(code) ต้องคืน Promise ที่ throw Error(message) เมื่อเข้าโต๊ะไม่สำเร็จ
-export default function TableCodeForm({ initialValue = '', onSubmit }) {
+export default function TableCodeForm({ initialValue = '', initialError = '', onSubmit }) {
   const [value, setValue] = useState(initialValue)
-  const [error, setError] = useState('')
+  const [error, setError] = useState(initialError)
+
+  useEffect(() => {
+    if (initialError) {
+      setError(initialError)
+      setValue('')
+    }
+  }, [initialError])
   const [busy, setBusy] = useState(false)
 
   const handleSubmit = async (e) => {

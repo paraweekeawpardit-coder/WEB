@@ -21,7 +21,17 @@ export default function MenuPage() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
   const [notice, setNotice] = useState('')
+  const [isBuffet, setIsBuffet] = useState(true)
   const cart = useCart()
+
+  // อ่านรูปแบบบริการของโต๊ะ (บุฟเฟ่ต์ซ่อนราคา, อาลาคาร์ตแสดงราคา)
+  useEffect(() => {
+    if (!table) return
+    api
+      .getTable(table)
+      .then((t) => setIsBuffet((t.mode ?? 'buffet') === 'buffet'))
+      .catch(() => {})
+  }, [table])
 
   useEffect(() => {
     let alive = true
@@ -93,7 +103,7 @@ export default function MenuPage() {
 
           <ul className="menu-grid">
             {visible.map((m) => (
-              <MenuCard key={m.id} menu={m} onAdd={cart.add} />
+              <MenuCard key={m.id} menu={m} onAdd={cart.add} showPrice={!isBuffet} />
             ))}
           </ul>
         </section>
