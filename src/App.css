@@ -273,3 +273,73 @@ body {
     transition: none !important;
   }
 }
+
+.password-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.password-field label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--print);
+}
+
+.password-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.password-input-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 1.0625rem;
+  color: var(--print);
+  background: #fff;
+  border: 2px solid var(--rule);
+  border-radius: 6px;
+  transition: border-color 0.15s;
+}
+
+.password-input-row input::placeholder {
+  color: #9ca3af;
+}
+
+.password-input-row input:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.toggle-pass-btn {
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.toggle-pass-btn:hover {
+  background: #eff6ff;
+}
+
+.field-error {
+  margin: 10px 0 0;
+  padding: 8px 12px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #b91c1c;
+  background: #fef2f2;
+  border-left: 3px solid #b91c1c;
+  border-radius: 4px;
+}
+
