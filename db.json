@@ -2,23 +2,24 @@
   "tables": [
     {
       "id": "A01",
-      "status": "available",
-      "guests": 0
+      "status": "occupied",
+      "guests": 5
     },
     {
       "id": "A02",
       "status": "available",
-      "guests": 0
+      "guests": 0,
+      "mode": "buffet"
     },
     {
       "id": "A03",
-      "status": "available",
-      "guests": 0
+      "status": "occupied",
+      "guests": 4
     },
     {
       "id": "A04",
       "status": "occupied",
-      "guests": 0
+      "guests": 1
     },
     {
       "id": "A05",
@@ -32,8 +33,8 @@
     },
     {
       "id": "B02",
-      "status": "available",
-      "guests": 0
+      "status": "occupied",
+      "guests": 2
     }
   ],
   "menus": [
@@ -108,6 +109,14 @@
       "image": "",
       "available": true,
       "id": 9
+    },
+    {
+      "name": "เส้นมัน",
+      "category": "other",
+      "price": 50,
+      "image": "https://cms.dmpcdn.com/food/2023/07/17/799835a0-2486-11ee-9825-fb15e800bfac_webp_original.webp",
+      "available": true,
+      "id": 10
     }
   ],
   "orders": [
@@ -278,6 +287,63 @@
       "status": "pending",
       "createdAt": "2026-11-19T14:25:22.243Z",
       "id": 8
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 298,
+      "status": "pending",
+      "createdAt": "2026-11-19T15:04:30.434Z",
+      "id": 9
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 15
+        }
+      ],
+      "total": 885,
+      "status": "pending",
+      "createdAt": "2026-11-20T02:27:02.898Z",
+      "id": 10
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 4
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 5
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 4
+        }
+      ],
+      "total": 1377,
+      "status": "paid",
+      "createdAt": "2026-11-20T03:25:50.036Z",
+      "id": 11
     }
   ],
   "serviceCalls": [
@@ -315,6 +381,27 @@
       "done": false,
       "createdAt": "2026-11-19T14:29:01.565Z",
       "id": 5
+    },
+    {
+      "tableId": "A03",
+      "type": "bill",
+      "done": false,
+      "createdAt": "2026-11-19T15:04:41.995Z",
+      "id": 6
+    },
+    {
+      "tableId": "A03",
+      "type": "call",
+      "done": true,
+      "createdAt": "2026-11-19T15:04:44.147Z",
+      "id": 7
+    },
+    {
+      "tableId": "A02",
+      "type": "bill",
+      "done": true,
+      "createdAt": "2026-11-20T03:26:00.390Z",
+      "id": 8
     }
   ]
 }

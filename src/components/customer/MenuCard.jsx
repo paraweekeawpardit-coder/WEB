@@ -13,7 +13,7 @@ const ICON = {
   drink: '🥤',
 }
 
-export default function MenuCard({ menu, onAdd }) {
+export default function MenuCard({ menu, onAdd, showPrice = SHOW_PRICE }) {
   const [qty, setQty] = useState(1)
 
   return (
@@ -26,7 +26,7 @@ export default function MenuCard({ menu, onAdd }) {
         </span>
       )}
       <h3>{menu.name}</h3>
-      {SHOW_PRICE && <p className="muted">{menu.price} บาท</p>}
+      {showPrice && <p className="muted">{menu.price} บาท</p>}
 
       <div className="stepper">
         <button type="button" onClick={() => setQty((q) => Math.max(1, q - 1))} aria-label="ลดจำนวน">
