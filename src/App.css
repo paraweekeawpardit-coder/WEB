@@ -289,47 +289,58 @@ body {
 
 .password-input-row {
   display: flex;
-  gap: 8px;
-  align-items: stretch;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 6px 5px 16px;
+  background: #f8faff;
+  border: 2px solid #cbd5e1;
+  border-radius: 14px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.password-input-row:focus-within {
+  background: #ffffff;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 4px rgba(30, 63, 168, 0.12);
 }
 
 .password-input-row input {
   flex: 1;
   min-width: 0;
-  padding: 10px 14px;
-  font-family: inherit;
-  font-size: 1.0625rem;
+  padding: 7px 4px;
+  font-family: 'Mali', 'Noto Sans Thai', sans-serif;
+  font-size: 1rem;
   color: var(--print);
-  background: #fff;
-  border: 2px solid var(--rule);
-  border-radius: 6px;
-  transition: border-color 0.15s;
+  background: transparent;
+  border: none;
 }
 
 .password-input-row input::placeholder {
-  color: #9ca3af;
+  color: #94a3b8;
+  font-family: 'Mali', 'Noto Sans Thai', sans-serif;
 }
 
 .password-input-row input:focus {
   outline: none;
-  border-color: var(--ink);
 }
 
 .toggle-pass-btn {
-  padding: 0 14px;
-  font-family: inherit;
-  font-size: 0.9375rem;
+  padding: 7px 14px;
+  font-family: 'Mali', 'Noto Sans Thai', sans-serif;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--ink);
-  background: #fff;
-  border: 2px solid var(--ink);
-  border-radius: 6px;
+  background: #eef2ff;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
   white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .toggle-pass-btn:hover {
-  background: #eff6ff;
+  background: var(--ink);
+  color: #ffffff;
 }
 
 .field-error {
