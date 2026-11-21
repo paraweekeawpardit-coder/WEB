@@ -185,7 +185,6 @@ export default function QrScanBox({ onScan, disabled = false }) {
           <canvas ref={canvasRef} style={{ display: 'none' }} />
           <p className="or">
             กำลังสแกน QR Code... หันกล้องไปที่ QR ประจำโต๊ะ
-            {camInfo ? ` (${camInfo})` : ''}
           </p>
           <button type="button" className="go" onClick={stopCamera}>
             ปิดกล้อง

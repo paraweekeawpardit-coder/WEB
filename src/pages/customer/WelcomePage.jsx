@@ -72,7 +72,7 @@ export default function WelcomePage() {
           </button>
         ) : (
           <>
-            <p className="or">
+            <p className="or welcome-hint">
               {urlError || 'กรุณาสแกน QR Code ที่โต๊ะ หรือเปิดลิงก์ที่พนักงานให้'}
             </p>
             <QrScanBox

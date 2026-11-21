@@ -95,7 +95,10 @@ function App() {
                     <Tick />
                   </span>
                   <span className="row-name">{r.name}</span>
-                  <span className="row-line">{r.line}</span>
+                  <span className="row-line">
+                    {r.line}
+                    {r.id !== 'customer' && ' · ต้องใส่รหัสผ่านเพื่อเข้าใช้งาน'}
+                  </span>
                 </label>
 
                 {checked && (
@@ -105,10 +108,6 @@ function App() {
                         <li key={f}>{f}</li>
                       ))}
                     </ul>
-
-                    {r.id !== 'customer' && (
-                      <p className="or">ต้องใส่รหัสผ่านเพื่อเข้าใช้งาน</p>
-                    )}
                   </div>
                 )}
               </div>
