@@ -101,6 +101,14 @@
       "image": "",
       "available": true,
       "id": 8
+    },
+    {
+      "name": "ซุปทองคำ",
+      "category": "soup",
+      "price": 50,
+      "image": "",
+      "available": true,
+      "id": 9
     }
   ],
   "orders": [
