@@ -8,7 +8,7 @@ import AdminMenuCard from '../../components/admin/AdminMenuCard'
 import ConfirmDialog from '../../components/admin/ConfirmDialog'
 import MenuForm from '../../components/admin/MenuForm'
 import Toast from '../../components/admin/Toast'
-import { CATEGORIES } from '../../components/customer/MenuToolBar'
+import { buildCategories } from '../../utils/categories'
 import './AdminPages.css'
 
 const STATUS_TABS = [
@@ -34,6 +34,10 @@ export default function AdminMenuPage() {
   const closeToast = useCallback(() => setToast(null), [])
   const notify = (msg, type = 'ok') => setToast({ msg, type, id: Date.now() })
 
+  const categories = useMemo(() => buildCategories(menus), [menus])
+  // ถ้าหมวดที่เลือกอยู่หายไป (ลบเมนูสุดท้ายของหมวดที่เพิ่มเอง) ให้กลับไป "ทั้งหมด"
+  const activeCategory = categories.some((c) => c.id === category) ? category : 'all'
+
   const counts = useMemo(() => {
     const on = menus.filter((m) => m.available).length
     return { all: menus.length, on, off: menus.length - on }
@@ -43,11 +47,11 @@ export default function AdminMenuPage() {
     const q = search.trim().toLowerCase()
     return menus.filter(
       (m) =>
-        (category === 'all' || m.category === category) &&
+        (activeCategory === 'all' || m.category === activeCategory) &&
         (status === 'all' || (status === 'on' ? m.available : !m.available)) &&
         m.name.toLowerCase().includes(q),
     )
-  }, [menus, search, category, status])
+  }, [menus, search, activeCategory, status])
 
   const handleSave = async (values) => {
     const isAdd = formMode === 'add'
@@ -117,13 +121,13 @@ export default function AdminMenuPage() {
 
         <div className="adm-filters">
           <div className="adm-chips" role="tablist" aria-label="หมวดหมู่">
-            {CATEGORIES.map((c) => (
+            {categories.map((c) => (
               <button
                 key={c.id}
                 type="button"
                 role="tab"
-                aria-selected={category === c.id}
-                className={category === c.id ? 'adm-pill active' : 'adm-pill'}
+                aria-selected={activeCategory === c.id}
+                className={activeCategory === c.id ? 'adm-pill active' : 'adm-pill'}
                 onClick={() => setCategory(c.id)}
               >
                 {c.label}
@@ -178,6 +182,7 @@ export default function AdminMenuPage() {
           key={formMode === 'add' ? 'add' : formMode.id}
           initial={formMode === 'add' ? null : formMode}
           existingNames={menus.map((m) => m.name)}
+          categories={categories}
           saving={saving}
           onSubmit={handleSave}
           onCancel={() => setFormMode(null)}

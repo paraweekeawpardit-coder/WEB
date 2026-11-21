@@ -7,11 +7,11 @@ export const CATEGORIES = [
   { id: 'meatball', label: 'ลูกชิ้น' },
   { id: 'soup', label: 'น้ำซุป' },
   { id: 'drink', label: 'เครื่องดื่ม' },
-  { id: 'other', label: 'อื่น ๆ' },
 ]
 
 // ช่องค้นหา + แท็บหมวดหมู่
-export default function MenuToolbar({ search, onSearch, category, onCategory }) {
+// extraCategories = หมวดที่แอดมินพิมพ์เพิ่มเอง ([{ id, label }]) ต่อท้ายหมวดมาตรฐาน
+export default function MenuToolbar({ search, onSearch, category, onCategory, extraCategories = [] }) {
   return (
     <div className="toolbar">
       <input
@@ -23,7 +23,7 @@ export default function MenuToolbar({ search, onSearch, category, onCategory }) 
         aria-label="ค้นหาเมนู"
       />
       <div className="tabs" role="tablist" aria-label="หมวดหมู่">
-        {CATEGORIES.map((c) => (
+        {[...CATEGORIES, ...extraCategories].map((c) => (
           <button
             key={c.id}
             type="button"
