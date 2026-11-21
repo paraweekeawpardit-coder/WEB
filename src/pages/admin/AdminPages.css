@@ -648,6 +648,7 @@
 }
 .adm-stat {
   display: grid;
+  align-content: start;
   gap: 2px;
   padding: 16px;
   background: #fff;
@@ -1234,4 +1235,105 @@ a.adm-hub-card:hover .adm-hub-arrow {
 }
 .tbl-card-body:has(.tbl-idle-text) {
   align-items: center;
+}
+/* แท็บย่อยของหน้าสถิติ */
+.adm-subtabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #e5e7eb;
+  overflow-x: auto;
+  overflow-y: hidden; /* กันไม่ให้ขึ้นลูกศรเลื่อนขึ้น-ลงข้างแท็บ */
+}
+.adm-subtab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  margin-bottom: -2px;
+  padding: 10px 18px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #6b7280;
+  cursor: pointer;
+}
+.adm-subtab:hover {
+  color: #b7242a;
+}
+.adm-subtab.active {
+  color: #b7242a;
+  border-bottom-color: #b7242a;
+}
+
+/* สัดส่วนโต๊ะตามจำนวนคน */
+.adm-party {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.adm-party li {
+  display: grid;
+  grid-template-columns: 64px 1fr 120px;
+  align-items: center;
+  gap: 12px;
+}
+.adm-party-label {
+  font-weight: 800;
+}
+.adm-party-count {
+  text-align: right;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.adm-party-count em {
+  color: #6b7280;
+  font-style: normal;
+  font-weight: 400;
+}
+.adm-party li.is-top .adm-bar-fill {
+  background: #b7242a;
+}
+.adm-note {
+  margin: 14px 0 0;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+@media (max-width: 640px) {
+  .adm-party li {
+    grid-template-columns: 52px 1fr 92px;
+    gap: 8px;
+  }
+}
+
+.adm-basis {
+  margin-bottom: 14px;
+}
+
+/* ปุ่มรีเฟรช + เวลาอัปเดตล่าสุด */
+.adm-refresh {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+.adm-updated {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+.adm-spin {
+  animation: adm-rotate 0.8s linear infinite;
+}
+@keyframes adm-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.adm-btn:active:not(:disabled) {
+  transform: scale(0.97);
 }

@@ -49,6 +49,10 @@ export const api = {
   updateOrderStatus: (id, status) =>
     request(`/orders/${id}`, { method: 'PATCH', body: JSON.stringify({ status }) }),
 
+  // ประวัติการนั่งโต๊ะ (บันทึกตอนเคลียร์โต๊ะ ใช้ทำสถิติจำนวนลูกค้าต่อโต๊ะ)
+  getVisits: () => request('/visits'),
+  createVisit: (v) => request('/visits', { method: 'POST', body: JSON.stringify(v) }),
+
   // เรียกพนักงาน / ขอเช็กบิล
   getServiceCalls: () => request('/serviceCalls?done=false'),
   getServiceCallsByTable: (tableId) => request(`/serviceCalls?tableId=${tableId}&done=false`),

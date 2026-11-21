@@ -1,10 +1,9 @@
 import { useRef, useState } from 'react'
 import { ImagePlus, Trash2, TriangleAlert, X } from 'lucide-react'
-import { CATEGORIES } from '../customer/MenuToolBar'
 import { fileToResizedDataUrl } from '../../utils/image'
 import CategoryIcon from './CategoryIcon'
 
-const CATEGORY_OPTIONS = CATEGORIES.filter((c) => c.id !== 'all')
+const NEW_CATEGORY = '__new__' // ค่าพิเศษใน dropdown = เพิ่มหมวดหมู่ใหม่
 const MAX_PRICE = 99999
 
 // ข้อความเตือนใต้ช่องที่กรอกผิด
@@ -18,14 +17,16 @@ function FieldError({ id, message }) {
 }
 
 // ฟอร์มเพิ่ม/แก้ไขเมนู (ถ้ามี initial = โหมดแก้ไข) รองรับอัปโหลดรูปจากเครื่อง
-export default function MenuForm({ initial, existingNames, onSubmit, onCancel, saving }) {
+export default function MenuForm({ initial, existingNames, categories, onSubmit, onCancel, saving }) {
+  const categoryOptions = categories.filter((c) => c.id !== 'all')
   const [values, setValues] = useState({
     name: initial?.name ?? '',
     category: initial?.category ?? '',
+    customCategory: '', // ชื่อหมวดใหม่ที่พิมพ์เอง (ใช้เมื่อเลือก "เพิ่มหมวดหมู่ใหม่")
     price: initial?.price ?? '',
     image: initial?.image ?? '',
   })
-  const [errors, setErrors] = useState({}) // { name, category, price, image }
+  const [errors, setErrors] = useState({}) // { name, category, customCategory, price, image }
   const [processing, setProcessing] = useState(false)
   const [dragging, setDragging] = useState(false)
   const fileRef = useRef(null)
@@ -40,6 +41,13 @@ export default function MenuForm({ initial, existingNames, onSubmit, onCancel, s
       return dup ? `มีเมนูชื่อ "${name}" อยู่แล้ว` : ''
     },
     category: (v) => (v.category ? '' : 'กรุณาเลือกหมวดหมู่'),
+    customCategory: (v) => {
+      if (v.category !== NEW_CATEGORY) return ''
+      const name = v.customCategory.trim()
+      if (!name) return 'กรุณากรอกชื่อหมวดหมู่ใหม่'
+      const exists = categoryOptions.some((c) => c.label.toLowerCase() === name.toLowerCase())
+      return exists ? `มีหมวดหมู่ "${name}" อยู่แล้ว เลือกจากรายการได้เลย` : ''
+    },
     price: (v) => {
       if (String(v.price).trim() === '') return 'กรุณากรอกราคา'
       const n = Number(v.price)
@@ -77,18 +85,19 @@ export default function MenuForm({ initial, existingNames, onSubmit, onCancel, s
     const next = {
       name: validators.name(values),
       category: validators.category(values),
+      customCategory: validators.customCategory(values),
       price: validators.price(values),
       image: errors.image ?? '',
     }
     setErrors(next)
-    if (next.name || next.category || next.price || next.image) {
+    if (next.name || next.category || next.customCategory || next.price || next.image) {
       // เลื่อนไปโฟกัสช่องแรกที่ผิด
       requestAnimationFrame(() => formRef.current?.querySelector('[aria-invalid="true"]')?.focus())
       return
     }
     onSubmit({
       name: values.name.trim(),
-      category: values.category,
+      category: values.category === NEW_CATEGORY ? values.customCategory.trim() : values.category,
       price: Number(values.price),
       image: values.image,
     })
@@ -176,11 +185,12 @@ export default function MenuForm({ initial, existingNames, onSubmit, onCancel, s
               <option value="" disabled>
                 กรุณาเลือกหมวดหมู่
               </option>
-              {CATEGORY_OPTIONS.map((c) => (
+              {categoryOptions.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.label}
                 </option>
               ))}
+              <option value={NEW_CATEGORY}>+ เพิ่มหมวดหมู่ใหม่...</option>
             </select>
             <FieldError id="err-category" message={errors.category} />
           </label>
@@ -202,6 +212,24 @@ export default function MenuForm({ initial, existingNames, onSubmit, onCancel, s
             <FieldError id="err-price" message={errors.price} />
           </label>
         </div>
+
+        {values.category === NEW_CATEGORY && (
+          <label className={errors.customCategory ? 'adm-field invalid' : 'adm-field'}>
+            <span>
+              ชื่อหมวดหมู่ใหม่ <em className="adm-req">*</em>
+            </span>
+            <input
+              value={values.customCategory}
+              onChange={(e) => setField('customCategory', e.target.value)}
+              onBlur={() => checkField('customCategory')}
+              placeholder="เช่น ของหวาน, น้ำจิ้ม, ข้าว"
+              maxLength={30}
+              aria-invalid={!!errors.customCategory}
+              aria-describedby={errors.customCategory ? 'err-custom' : undefined}
+            />
+            <FieldError id="err-custom" message={errors.customCategory} />
+          </label>
+        )}
 
         <div className="adm-modal-actions">
           <button type="button" className="adm-btn" onClick={onCancel} disabled={saving}>

@@ -51,7 +51,7 @@
       "name": "สันคอหมูสไลซ์",
       "category": "pork",
       "price": 99,
-      "available": true,
+      "available": false,
       "image": ""
     },
     {
@@ -59,7 +59,7 @@
       "name": "กุ้งสด",
       "category": "seafood",
       "price": 149,
-      "available": true,
+      "available": false,
       "image": ""
     },
     {
@@ -67,7 +67,7 @@
       "name": "ผักรวม",
       "category": "veggie",
       "price": 59,
-      "available": true,
+      "available": false,
       "image": "https://backend.paleorobbie.com/static/db/plr/files/IMG_3064-3,OggWKSGW_6w=.jpg"
     },
     {
@@ -75,7 +75,7 @@
       "name": "ลูกชิ้นรวม",
       "category": "meatball",
       "price": 69,
-      "available": true,
+      "available": false,
       "image": ""
     },
     {
@@ -101,25 +101,4495 @@
       "image": "",
       "available": true,
       "id": 8
-    },
-    {
-      "name": "วุ้นเส้น",
-      "category": "other",
-      "price": 10,
-      "image": "",
-      "available": true,
-      "id": 9
-    },
-    {
-      "name": "เส้นมัน",
-      "category": "other",
-      "price": 50,
-      "image": "https://cms.dmpcdn.com/food/2023/07/17/799835a0-2486-11ee-9825-fb15e800bfac_webp_original.webp",
-      "available": true,
-      "id": 10
     }
   ],
   "orders": [
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 213,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:00:00.376Z",
+      "id": 30,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 892,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:09:00.877Z",
+      "id": 31,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 4
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 585,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:15:00.851Z",
+      "id": 33,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 593,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:18:00.877Z",
+      "id": 34,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        }
+      ],
+      "total": 633,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:25:00.988Z",
+      "id": 32,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 515,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:30:00.592Z",
+      "id": 35,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 328,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:35:00.481Z",
+      "id": 37,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 3
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 564,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:36:00.345Z",
+      "id": 26,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 354,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:39:00.912Z",
+      "id": 24,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        }
+      ],
+      "total": 256,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:49:00.686Z",
+      "id": 22,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        }
+      ],
+      "total": 504,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:55:00.412Z",
+      "id": 27,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        }
+      ],
+      "total": 375,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:56:00.836Z",
+      "id": 25,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        }
+      ],
+      "total": 158,
+      "status": "paid",
+      "createdAt": "2026-11-08T11:57:00.584Z",
+      "id": 23,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 485,
+      "status": "paid",
+      "createdAt": "2026-11-08T12:01:00.449Z",
+      "id": 36,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        }
+      ],
+      "total": 660,
+      "status": "paid",
+      "createdAt": "2026-11-08T12:11:00.581Z",
+      "id": 18,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        }
+      ],
+      "total": 138,
+      "status": "paid",
+      "createdAt": "2026-11-08T12:33:00.774Z",
+      "id": 29,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 5
+        }
+      ],
+      "total": 775,
+      "status": "paid",
+      "createdAt": "2026-11-08T12:35:00.184Z",
+      "id": 19,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        }
+      ],
+      "total": 556,
+      "status": "paid",
+      "createdAt": "2026-11-08T12:41:00.783Z",
+      "id": 14,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 207,
+      "status": "paid",
+      "createdAt": "2026-11-08T12:42:00.845Z",
+      "id": 28,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 8
+        }
+      ],
+      "total": 498,
+      "status": "paid",
+      "createdAt": "2026-11-08T12:58:00.628Z",
+      "id": 20,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 4
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 738,
+      "status": "paid",
+      "createdAt": "2026-11-08T13:06:00.109Z",
+      "id": 13,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 8
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 5
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 8
+        }
+      ],
+      "total": 2027,
+      "status": "paid",
+      "createdAt": "2026-11-08T13:15:00.848Z",
+      "id": 21,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        }
+      ],
+      "total": 390,
+      "status": "paid",
+      "createdAt": "2026-11-08T13:30:00.854Z",
+      "id": 12,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 3
+        }
+      ],
+      "total": 801,
+      "status": "paid",
+      "createdAt": "2026-11-08T13:51:00.376Z",
+      "id": 17,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        }
+      ],
+      "total": 570,
+      "status": "paid",
+      "createdAt": "2026-11-08T14:06:00.391Z",
+      "id": 15,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        }
+      ],
+      "total": 93,
+      "status": "paid",
+      "createdAt": "2026-11-08T14:14:00.702Z",
+      "id": 16,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 641,
+      "status": "paid",
+      "createdAt": "2026-11-09T11:21:00.141Z",
+      "id": 46,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 544,
+      "status": "paid",
+      "createdAt": "2026-11-09T12:12:00.051Z",
+      "id": 47,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        }
+      ],
+      "total": 416,
+      "status": "paid",
+      "createdAt": "2026-11-09T12:22:00.907Z",
+      "id": 42,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        }
+      ],
+      "total": 748,
+      "status": "paid",
+      "createdAt": "2026-11-09T12:34:00.138Z",
+      "id": 38,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 796,
+      "status": "paid",
+      "createdAt": "2026-11-09T12:38:00.500Z",
+      "id": 41,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        }
+      ],
+      "total": 714,
+      "status": "paid",
+      "createdAt": "2026-11-09T12:39:00.234Z",
+      "id": 44,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 5
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 5
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 5
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 1513,
+      "status": "paid",
+      "createdAt": "2026-11-09T12:43:00.379Z",
+      "id": 39,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        }
+      ],
+      "total": 584,
+      "status": "paid",
+      "createdAt": "2026-11-09T12:48:00.582Z",
+      "id": 43,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        }
+      ],
+      "total": 555,
+      "status": "paid",
+      "createdAt": "2026-11-09T12:51:00.992Z",
+      "id": 45,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 3
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        }
+      ],
+      "total": 315,
+      "status": "paid",
+      "createdAt": "2026-11-09T13:05:00.072Z",
+      "id": 40,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 4
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        }
+      ],
+      "total": 296,
+      "status": "paid",
+      "createdAt": "2026-11-10T11:29:00.506Z",
+      "id": 59,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 375,
+      "status": "paid",
+      "createdAt": "2026-11-10T11:47:00.283Z",
+      "id": 48,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        }
+      ],
+      "total": 247,
+      "status": "paid",
+      "createdAt": "2026-11-10T11:53:00.874Z",
+      "id": 55,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 442,
+      "status": "paid",
+      "createdAt": "2026-11-10T12:04:00.735Z",
+      "id": 52,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 265,
+      "status": "paid",
+      "createdAt": "2026-11-10T12:19:00.840Z",
+      "id": 58,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 672,
+      "status": "paid",
+      "createdAt": "2026-11-10T12:24:00.040Z",
+      "id": 56,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 168,
+      "status": "paid",
+      "createdAt": "2026-11-10T12:26:00.884Z",
+      "id": 53,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        }
+      ],
+      "total": 384,
+      "status": "paid",
+      "createdAt": "2026-11-10T12:28:00.868Z",
+      "id": 54,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 543,
+      "status": "paid",
+      "createdAt": "2026-11-10T12:55:00.941Z",
+      "id": 57,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        }
+      ],
+      "total": 302,
+      "status": "paid",
+      "createdAt": "2026-11-10T13:03:00.727Z",
+      "id": 61,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        }
+      ],
+      "total": 633,
+      "status": "paid",
+      "createdAt": "2026-11-10T13:12:00.082Z",
+      "id": 49,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        }
+      ],
+      "total": 589,
+      "status": "paid",
+      "createdAt": "2026-11-10T13:23:00.214Z",
+      "id": 51,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 479,
+      "status": "paid",
+      "createdAt": "2026-11-10T13:29:00.138Z",
+      "id": 50,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 593,
+      "status": "paid",
+      "createdAt": "2026-11-10T13:54:00.300Z",
+      "id": 60,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 4
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        }
+      ],
+      "total": 1367,
+      "status": "paid",
+      "createdAt": "2026-11-11T10:25:00.757Z",
+      "id": 64,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 4
+        }
+      ],
+      "total": 713,
+      "status": "paid",
+      "createdAt": "2026-11-11T11:02:00.840Z",
+      "id": 63,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 3
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 3
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 4
+        }
+      ],
+      "total": 1037,
+      "status": "paid",
+      "createdAt": "2026-11-11T11:05:00.365Z",
+      "id": 70,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        }
+      ],
+      "total": 399,
+      "status": "paid",
+      "createdAt": "2026-11-11T11:09:00.508Z",
+      "id": 69,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 4
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        }
+      ],
+      "total": 641,
+      "status": "paid",
+      "createdAt": "2026-11-11T11:22:00.945Z",
+      "id": 62,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        }
+      ],
+      "total": 233,
+      "status": "paid",
+      "createdAt": "2026-11-11T11:40:00.738Z",
+      "id": 67,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 207,
+      "status": "paid",
+      "createdAt": "2026-11-11T12:19:00.489Z",
+      "id": 65,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 300,
+      "status": "paid",
+      "createdAt": "2026-11-11T12:35:00.486Z",
+      "id": 68,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 713,
+      "status": "paid",
+      "createdAt": "2026-11-11T13:24:00.942Z",
+      "id": 66,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 754,
+      "status": "paid",
+      "createdAt": "2026-11-12T10:30:00.481Z",
+      "id": 76,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 5
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        }
+      ],
+      "total": 882,
+      "status": "paid",
+      "createdAt": "2026-11-12T11:18:00.044Z",
+      "id": 71,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        }
+      ],
+      "total": 543,
+      "status": "paid",
+      "createdAt": "2026-11-12T11:23:00.336Z",
+      "id": 77,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 5
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 5
+        }
+      ],
+      "total": 1453,
+      "status": "paid",
+      "createdAt": "2026-11-12T11:56:00.366Z",
+      "id": 81,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 5
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 762,
+      "status": "paid",
+      "createdAt": "2026-11-12T12:18:00.433Z",
+      "id": 72,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        }
+      ],
+      "total": 553,
+      "status": "paid",
+      "createdAt": "2026-11-12T12:29:00.554Z",
+      "id": 82,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 188,
+      "status": "paid",
+      "createdAt": "2026-11-12T14:01:00.409Z",
+      "id": 73,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 575,
+      "status": "paid",
+      "createdAt": "2026-11-12T14:11:00.094Z",
+      "id": 75,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 4
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 5
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        }
+      ],
+      "total": 914,
+      "status": "paid",
+      "createdAt": "2026-11-12T14:14:00.246Z",
+      "id": 78,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 5
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 6
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        }
+      ],
+      "total": 1068,
+      "status": "paid",
+      "createdAt": "2026-11-12T14:18:00.597Z",
+      "id": 79,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 327,
+      "status": "paid",
+      "createdAt": "2026-11-12T14:45:00.162Z",
+      "id": 74,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 5
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 5
+        }
+      ],
+      "total": 567,
+      "status": "paid",
+      "createdAt": "2026-11-12T14:45:00.317Z",
+      "id": 80,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 6
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 4
+        }
+      ],
+      "total": 1157,
+      "status": "paid",
+      "createdAt": "2026-11-13T11:32:00.848Z",
+      "id": 84,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 5
+        }
+      ],
+      "total": 862,
+      "status": "paid",
+      "createdAt": "2026-11-13T12:24:00.479Z",
+      "id": 85,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 3
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 5
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        }
+      ],
+      "total": 981,
+      "status": "paid",
+      "createdAt": "2026-11-13T12:25:00.648Z",
+      "id": 86,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 414,
+      "status": "paid",
+      "createdAt": "2026-11-13T12:53:00.292Z",
+      "id": 89,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 5
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 940,
+      "status": "paid",
+      "createdAt": "2026-11-13T13:05:00.677Z",
+      "id": 91,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        }
+      ],
+      "total": 771,
+      "status": "paid",
+      "createdAt": "2026-11-13T13:28:00.081Z",
+      "id": 92,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 325,
+      "status": "paid",
+      "createdAt": "2026-11-13T13:33:00.279Z",
+      "id": 90,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 711,
+      "status": "paid",
+      "createdAt": "2026-11-13T13:46:00.443Z",
+      "id": 83,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        }
+      ],
+      "total": 334,
+      "status": "paid",
+      "createdAt": "2026-11-13T14:02:00.619Z",
+      "id": 87,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        }
+      ],
+      "total": 331,
+      "status": "paid",
+      "createdAt": "2026-11-13T14:21:00.461Z",
+      "id": 88,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 365,
+      "status": "paid",
+      "createdAt": "2026-11-13T14:35:00.366Z",
+      "id": 93,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 3
+        }
+      ],
+      "total": 525,
+      "status": "paid",
+      "createdAt": "2026-11-14T11:02:00.775Z",
+      "id": 94,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 864,
+      "status": "paid",
+      "createdAt": "2026-11-14T11:18:00.242Z",
+      "id": 105,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        }
+      ],
+      "total": 531,
+      "status": "paid",
+      "createdAt": "2026-11-14T11:18:00.917Z",
+      "id": 106,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        }
+      ],
+      "total": 733,
+      "status": "paid",
+      "createdAt": "2026-11-14T11:30:00.216Z",
+      "id": 107,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 604,
+      "status": "paid",
+      "createdAt": "2026-11-14T11:51:00.274Z",
+      "id": 100,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 4
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 4
+        }
+      ],
+      "total": 1517,
+      "status": "paid",
+      "createdAt": "2026-11-14T12:11:00.574Z",
+      "id": 112,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        }
+      ],
+      "total": 513,
+      "status": "paid",
+      "createdAt": "2026-11-14T12:18:00.901Z",
+      "id": 101,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        }
+      ],
+      "total": 752,
+      "status": "paid",
+      "createdAt": "2026-11-14T12:28:00.697Z",
+      "id": 95,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 3
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 375,
+      "status": "paid",
+      "createdAt": "2026-11-14T12:28:00.826Z",
+      "id": 108,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 5
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 6
+        }
+      ],
+      "total": 796,
+      "status": "paid",
+      "createdAt": "2026-11-14T12:49:00.221Z",
+      "id": 114,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 959,
+      "status": "paid",
+      "createdAt": "2026-11-14T12:57:00.555Z",
+      "id": 113,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 5
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 4
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 5
+        }
+      ],
+      "total": 1216,
+      "status": "paid",
+      "createdAt": "2026-11-14T13:11:00.687Z",
+      "id": 115,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 4
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        }
+      ],
+      "total": 411,
+      "status": "paid",
+      "createdAt": "2026-11-14T13:20:00.331Z",
+      "id": 97,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        }
+      ],
+      "total": 247,
+      "status": "paid",
+      "createdAt": "2026-11-14T13:48:00.558Z",
+      "id": 102,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 5
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 6
+        }
+      ],
+      "total": 885,
+      "status": "paid",
+      "createdAt": "2026-11-14T13:55:00.678Z",
+      "id": 98,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        }
+      ],
+      "total": 447,
+      "status": "paid",
+      "createdAt": "2026-11-14T14:08:00.685Z",
+      "id": 103,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        }
+      ],
+      "total": 390,
+      "status": "paid",
+      "createdAt": "2026-11-14T14:18:00.691Z",
+      "id": 109,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        }
+      ],
+      "total": 609,
+      "status": "paid",
+      "createdAt": "2026-11-14T14:21:00.535Z",
+      "id": 99,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 4
+        }
+      ],
+      "total": 552,
+      "status": "paid",
+      "createdAt": "2026-11-14T14:35:00.146Z",
+      "id": 111,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        }
+      ],
+      "total": 445,
+      "status": "paid",
+      "createdAt": "2026-11-14T14:40:00.593Z",
+      "id": 96,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 595,
+      "status": "paid",
+      "createdAt": "2026-11-14T14:43:00.421Z",
+      "id": 104,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 3
+        }
+      ],
+      "total": 699,
+      "status": "paid",
+      "createdAt": "2026-11-14T14:52:00.372Z",
+      "id": 110,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 434,
+      "status": "paid",
+      "createdAt": "2026-11-15T10:40:00.925Z",
+      "id": 129,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 4
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 4
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 4
+        }
+      ],
+      "total": 1123,
+      "status": "paid",
+      "createdAt": "2026-11-15T10:43:00.379Z",
+      "id": 134,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 415,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:03:00.255Z",
+      "id": 130,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        }
+      ],
+      "total": 144,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:09:00.615Z",
+      "id": 122,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 4
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 450,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:16:00.807Z",
+      "id": 121,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        }
+      ],
+      "total": 201,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:22:00.507Z",
+      "id": 135,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        }
+      ],
+      "total": 275,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:24:00.704Z",
+      "id": 136,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        }
+      ],
+      "total": 741,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:29:00.196Z",
+      "id": 116,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 5
+        }
+      ],
+      "total": 844,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:35:00.941Z",
+      "id": 119,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        }
+      ],
+      "total": 738,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:40:00.206Z",
+      "id": 118,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 6
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 5
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        }
+      ],
+      "total": 1495,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:41:00.124Z",
+      "id": 120,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 465,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:52:00.684Z",
+      "id": 137,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        }
+      ],
+      "total": 668,
+      "status": "paid",
+      "createdAt": "2026-11-15T11:53:00.915Z",
+      "id": 131,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 3
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 4
+        }
+      ],
+      "total": 597,
+      "status": "paid",
+      "createdAt": "2026-11-15T12:11:00.622Z",
+      "id": 117,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 108,
+      "status": "paid",
+      "createdAt": "2026-11-15T12:24:00.802Z",
+      "id": 132,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        }
+      ],
+      "total": 485,
+      "status": "paid",
+      "createdAt": "2026-11-15T12:26:00.655Z",
+      "id": 125,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 712,
+      "status": "paid",
+      "createdAt": "2026-11-15T12:33:00.245Z",
+      "id": 126,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 4
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 3
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 780,
+      "status": "paid",
+      "createdAt": "2026-11-15T12:45:00.471Z",
+      "id": 127,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 3
+        }
+      ],
+      "total": 701,
+      "status": "paid",
+      "createdAt": "2026-11-15T12:57:00.632Z",
+      "id": 139,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        }
+      ],
+      "total": 643,
+      "status": "paid",
+      "createdAt": "2026-11-15T13:03:00.559Z",
+      "id": 133,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        }
+      ],
+      "total": 453,
+      "status": "paid",
+      "createdAt": "2026-11-15T13:08:00.856Z",
+      "id": 138,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 4
+        }
+      ],
+      "total": 577,
+      "status": "paid",
+      "createdAt": "2026-11-15T13:10:00.952Z",
+      "id": 123,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 7
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        }
+      ],
+      "total": 1175,
+      "status": "paid",
+      "createdAt": "2026-11-15T13:34:00.496Z",
+      "id": 128,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 3
+        }
+      ],
+      "total": 639,
+      "status": "paid",
+      "createdAt": "2026-11-15T13:49:00.284Z",
+      "id": 124,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        }
+      ],
+      "total": 782,
+      "status": "paid",
+      "createdAt": "2026-11-16T11:11:00.174Z",
+      "id": 141,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 3
+        }
+      ],
+      "total": 255,
+      "status": "paid",
+      "createdAt": "2026-11-16T11:28:00.242Z",
+      "id": 140,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 3
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 1026,
+      "status": "paid",
+      "createdAt": "2026-11-16T12:06:00.192Z",
+      "id": 147,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        }
+      ],
+      "total": 859,
+      "status": "paid",
+      "createdAt": "2026-11-16T12:32:00.065Z",
+      "id": 148,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        }
+      ],
+      "total": 342,
+      "status": "paid",
+      "createdAt": "2026-11-16T12:35:00.294Z",
+      "id": 146,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        }
+      ],
+      "total": 376,
+      "status": "paid",
+      "createdAt": "2026-11-16T13:21:00.088Z",
+      "id": 143,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 4
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 611,
+      "status": "paid",
+      "createdAt": "2026-11-16T13:52:00.631Z",
+      "id": 144,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 902,
+      "status": "paid",
+      "createdAt": "2026-11-16T13:53:00.123Z",
+      "id": 142,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 3
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 6
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 6
+        }
+      ],
+      "total": 1263,
+      "status": "paid",
+      "createdAt": "2026-11-16T13:53:00.701Z",
+      "id": 145,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 3
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        }
+      ],
+      "total": 414,
+      "status": "paid",
+      "createdAt": "2026-11-17T10:54:00.693Z",
+      "id": 155,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 4
+        }
+      ],
+      "total": 641,
+      "status": "paid",
+      "createdAt": "2026-11-17T11:03:00.995Z",
+      "id": 156,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 93,
+      "status": "paid",
+      "createdAt": "2026-11-17T11:33:00.537Z",
+      "id": 149,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 4
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 1086,
+      "status": "paid",
+      "createdAt": "2026-11-17T11:41:00.364Z",
+      "id": 157,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        }
+      ],
+      "total": 614,
+      "status": "paid",
+      "createdAt": "2026-11-17T13:20:00.606Z",
+      "id": 159,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        }
+      ],
+      "total": 657,
+      "status": "paid",
+      "createdAt": "2026-11-17T13:24:00.081Z",
+      "id": 158,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 195,
+      "status": "paid",
+      "createdAt": "2026-11-17T14:03:00.511Z",
+      "id": 151,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        }
+      ],
+      "total": 159,
+      "status": "paid",
+      "createdAt": "2026-11-17T14:25:00.731Z",
+      "id": 152,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 267,
+      "status": "paid",
+      "createdAt": "2026-11-17T14:29:00.074Z",
+      "id": 150,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        }
+      ],
+      "total": 703,
+      "status": "paid",
+      "createdAt": "2026-11-17T14:40:00.547Z",
+      "id": 153,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 177,
+      "status": "paid",
+      "createdAt": "2026-11-17T14:51:00.860Z",
+      "id": 154,
+      "mock": true
+    },
     {
       "tableId": "A01",
       "items": [
@@ -205,6 +4675,460 @@
       "id": 4
     },
     {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        }
+      ],
+      "total": 566,
+      "status": "paid",
+      "createdAt": "2026-11-18T10:36:00.164Z",
+      "id": 167,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 4
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 694,
+      "status": "paid",
+      "createdAt": "2026-11-18T10:52:00.584Z",
+      "id": 169,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        }
+      ],
+      "total": 831,
+      "status": "paid",
+      "createdAt": "2026-11-18T11:06:00.495Z",
+      "id": 168,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        }
+      ],
+      "total": 556,
+      "status": "paid",
+      "createdAt": "2026-11-18T11:15:00.724Z",
+      "id": 162,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 564,
+      "status": "paid",
+      "createdAt": "2026-11-18T11:24:00.920Z",
+      "id": 163,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 554,
+      "status": "paid",
+      "createdAt": "2026-11-18T12:17:00.800Z",
+      "id": 164,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 364,
+      "status": "paid",
+      "createdAt": "2026-11-18T12:29:00.756Z",
+      "id": 165,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 4
+        }
+      ],
+      "total": 623,
+      "status": "paid",
+      "createdAt": "2026-11-18T12:33:00.291Z",
+      "id": 161,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        }
+      ],
+      "total": 108,
+      "status": "paid",
+      "createdAt": "2026-11-18T12:40:00.924Z",
+      "id": 170,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 3
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        }
+      ],
+      "total": 609,
+      "status": "paid",
+      "createdAt": "2026-11-18T12:44:00.307Z",
+      "id": 172,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        }
+      ],
+      "total": 108,
+      "status": "paid",
+      "createdAt": "2026-11-18T12:45:00.508Z",
+      "id": 174,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 483,
+      "status": "paid",
+      "createdAt": "2026-11-18T12:48:00.088Z",
+      "id": 166,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 4
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 315,
+      "status": "paid",
+      "createdAt": "2026-11-18T12:50:00.228Z",
+      "id": 171,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 4
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 314,
+      "status": "paid",
+      "createdAt": "2026-11-18T12:52:00.780Z",
+      "id": 173,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        }
+      ],
+      "total": 267,
+      "status": "paid",
+      "createdAt": "2026-11-18T12:59:00.840Z",
+      "id": 175,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 534,
+      "status": "paid",
+      "createdAt": "2026-11-18T14:35:00.417Z",
+      "id": 160,
+      "mock": true
+    },
+    {
       "tableId": "A03",
       "items": [
         {
@@ -218,6 +5142,112 @@
       "status": "paid",
       "createdAt": "2026-11-19T06:57:21.772Z",
       "id": 5
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        }
+      ],
+      "total": 267,
+      "status": "paid",
+      "createdAt": "2026-11-19T11:25:00.089Z",
+      "id": 179,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        }
+      ],
+      "total": 137,
+      "status": "paid",
+      "createdAt": "2026-11-19T11:33:00.418Z",
+      "id": 178,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        }
+      ],
+      "total": 123,
+      "status": "paid",
+      "createdAt": "2026-11-19T11:35:00.500Z",
+      "id": 182,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 4
+        }
+      ],
+      "total": 866,
+      "status": "paid",
+      "createdAt": "2026-11-19T12:06:00.987Z",
+      "id": 176,
+      "mock": true
     },
     {
       "tableId": "A01",
@@ -253,6 +5283,124 @@
       "id": 6
     },
     {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 5
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        }
+      ],
+      "total": 1011,
+      "status": "paid",
+      "createdAt": "2026-11-19T13:06:00.275Z",
+      "id": 183,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 4
+        }
+      ],
+      "total": 861,
+      "status": "paid",
+      "createdAt": "2026-11-19T13:11:00.309Z",
+      "id": 184,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 4
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        }
+      ],
+      "total": 1109,
+      "status": "paid",
+      "createdAt": "2026-11-19T13:14:00.621Z",
+      "id": 177,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        }
+      ],
+      "total": 159,
+      "status": "paid",
+      "createdAt": "2026-11-19T13:16:00.614Z",
+      "id": 181,
+      "mock": true
+    },
+    {
       "tableId": "A04",
       "items": [
         {
@@ -272,6 +5420,80 @@
       "status": "paid",
       "createdAt": "2026-11-19T13:20:23.199Z",
       "id": 7
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 3
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 4
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 3
+        }
+      ],
+      "total": 1217,
+      "status": "paid",
+      "createdAt": "2026-11-19T13:29:00.645Z",
+      "id": 180,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 5
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 5
+        }
+      ],
+      "total": 1295,
+      "status": "paid",
+      "createdAt": "2026-11-19T13:51:00.693Z",
+      "id": 185,
+      "mock": true
     },
     {
       "tableId": "A04",
@@ -344,6 +5566,500 @@
       "status": "paid",
       "createdAt": "2026-11-20T03:25:50.036Z",
       "id": 11
+    },
+    {
+      "tableId": "A02",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 286,
+      "status": "paid",
+      "createdAt": "2026-11-20T10:20:00.661Z",
+      "id": 188,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 5
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        }
+      ],
+      "total": 472,
+      "status": "paid",
+      "createdAt": "2026-11-20T10:24:00.476Z",
+      "id": 189,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 3
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 5
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 1456,
+      "status": "paid",
+      "createdAt": "2026-11-20T11:02:00.275Z",
+      "id": 190,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 3
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 4
+        }
+      ],
+      "total": 683,
+      "status": "paid",
+      "createdAt": "2026-11-20T11:02:00.553Z",
+      "id": 191,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 262,
+      "status": "paid",
+      "createdAt": "2026-11-20T11:17:00.918Z",
+      "id": 198,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        }
+      ],
+      "total": 456,
+      "status": "paid",
+      "createdAt": "2026-11-20T11:36:00.353Z",
+      "id": 199,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 5,
+          "name": "ลูกชิ้นรวม",
+          "price": 69,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        }
+      ],
+      "total": 379,
+      "status": "paid",
+      "createdAt": "2026-11-20T11:56:00.510Z",
+      "id": 194,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 3
+        }
+      ],
+      "total": 243,
+      "status": "paid",
+      "createdAt": "2026-11-20T12:22:00.858Z",
+      "id": 195,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 4
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 4
+        }
+      ],
+      "total": 850,
+      "status": "paid",
+      "createdAt": "2026-11-20T13:01:00.763Z",
+      "id": 196,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 4
+        }
+      ],
+      "total": 552,
+      "status": "paid",
+      "createdAt": "2026-11-20T13:08:00.293Z",
+      "id": 186,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 2
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        }
+      ],
+      "total": 593,
+      "status": "paid",
+      "createdAt": "2026-11-20T13:13:00.007Z",
+      "id": 197,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        }
+      ],
+      "total": 357,
+      "status": "paid",
+      "createdAt": "2026-11-20T13:16:00.581Z",
+      "id": 201,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 1
+        }
+      ],
+      "total": 183,
+      "status": "paid",
+      "createdAt": "2026-11-20T13:37:00.398Z",
+      "id": 200,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "items": [
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 4
+        },
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 4
+        }
+      ],
+      "total": 216,
+      "status": "paid",
+      "createdAt": "2026-11-20T13:49:00.959Z",
+      "id": 187,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 2
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 1
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 2
+        },
+        {
+          "menuId": 6,
+          "name": "น้ำซุปหม่าล่า",
+          "price": 39,
+          "qty": 1
+        }
+      ],
+      "total": 334,
+      "status": "paid",
+      "createdAt": "2026-11-20T14:05:00.515Z",
+      "id": 192,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "items": [
+        {
+          "menuId": 7,
+          "name": "น้ำเปล่า",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 2
+        },
+        {
+          "menuId": 4,
+          "name": "ผักรวม",
+          "price": 59,
+          "qty": 1
+        }
+      ],
+      "total": 387,
+      "status": "paid",
+      "createdAt": "2026-11-20T14:06:00.464Z",
+      "id": 193,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "กุ้งสด",
+          "price": 149,
+          "qty": 1
+        },
+        {
+          "menuId": 1,
+          "name": "เนื้อวัวสไลซ์",
+          "price": 129,
+          "qty": 2
+        },
+        {
+          "menuId": 8,
+          "name": "น้ำซุปทองคำ",
+          "price": 39,
+          "qty": 3
+        },
+        {
+          "menuId": 2,
+          "name": "สันคอหมูสไลซ์",
+          "price": 99,
+          "qty": 4
+        }
+      ],
+      "total": 920,
+      "status": "paid",
+      "createdAt": "2026-11-21T11:13:00.698Z",
+      "id": 202,
+      "mock": true
     }
   ],
   "serviceCalls": [
@@ -402,6 +6118,917 @@
       "done": true,
       "createdAt": "2026-11-20T03:26:00.390Z",
       "id": 8
+    }
+  ],
+  "visits": [
+    {
+      "tableId": "A01",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-08T14:11:00.016Z",
+      "id": 1,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 6,
+      "mode": "alacarte",
+      "amount": 1523.04,
+      "closedAt": "2026-11-08T14:01:00.035Z",
+      "id": 2,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-08T14:53:00.835Z",
+      "id": 3,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-08T13:11:00.379Z",
+      "id": 4,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 8,
+      "mode": "buffet",
+      "amount": 3756.98,
+      "closedAt": "2026-11-08T13:48:00.563Z",
+      "id": 5,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-08T12:41:00.687Z",
+      "id": 6,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-08T12:45:00.743Z",
+      "id": 7,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 4,
+      "mode": "alacarte",
+      "amount": 663.83,
+      "closedAt": "2026-11-08T12:39:00.775Z",
+      "id": 8,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 1,
+      "mode": "buffet",
+      "amount": 469.62,
+      "closedAt": "2026-11-08T13:20:00.715Z",
+      "id": 9,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 1,
+      "mode": "alacarte",
+      "amount": 1300.59,
+      "closedAt": "2026-11-08T12:27:00.411Z",
+      "id": 10,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 4,
+      "mode": "alacarte",
+      "amount": 1433.59,
+      "closedAt": "2026-11-08T12:27:00.906Z",
+      "id": 11,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-08T11:47:00.295Z",
+      "id": 12,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-08T12:40:00.450Z",
+      "id": 13,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-09T14:14:00.083Z",
+      "id": 14,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 5,
+      "mode": "buffet",
+      "amount": 2348.12,
+      "closedAt": "2026-11-09T13:35:00.077Z",
+      "id": 15,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 5,
+      "mode": "buffet",
+      "amount": 2348.12,
+      "closedAt": "2026-11-09T13:30:00.731Z",
+      "id": 16,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-09T14:23:00.775Z",
+      "id": 17,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-09T13:01:00.217Z",
+      "id": 18,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 5,
+      "mode": "buffet",
+      "amount": 2348.12,
+      "closedAt": "2026-11-09T13:29:00.371Z",
+      "id": 19,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 1,
+      "mode": "alacarte",
+      "amount": 1394.75,
+      "closedAt": "2026-11-09T12:44:00.970Z",
+      "id": 20,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-10T13:27:00.282Z",
+      "id": 21,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-10T13:43:00.198Z",
+      "id": 22,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-10T12:31:00.084Z",
+      "id": 23,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-10T13:11:00.436Z",
+      "id": 24,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 1,
+      "mode": "buffet",
+      "amount": 469.62,
+      "closedAt": "2026-11-10T13:54:00.110Z",
+      "id": 25,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-10T12:23:00.483Z",
+      "id": 26,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-10T14:46:00.114Z",
+      "id": 27,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 2,
+      "mode": "alacarte",
+      "amount": 355.45,
+      "closedAt": "2026-11-10T14:24:00.416Z",
+      "id": 28,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-11T11:42:00.831Z",
+      "id": 29,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 4,
+      "mode": "alacarte",
+      "amount": 1608.96,
+      "closedAt": "2026-11-11T11:29:00.691Z",
+      "id": 30,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 2,
+      "mode": "alacarte",
+      "amount": 1082.84,
+      "closedAt": "2026-11-11T13:27:00.885Z",
+      "id": 31,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 2,
+      "mode": "alacarte",
+      "amount": 274.24,
+      "closedAt": "2026-11-11T12:34:00.829Z",
+      "id": 32,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "guests": 1,
+      "mode": "buffet",
+      "amount": 469.62,
+      "closedAt": "2026-11-11T12:55:00.845Z",
+      "id": 33,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-11T11:48:00.946Z",
+      "id": 34,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 5,
+      "mode": "buffet",
+      "amount": 2348.12,
+      "closedAt": "2026-11-12T12:58:00.744Z",
+      "id": 35,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-12T14:47:00.830Z",
+      "id": 36,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 1,
+      "mode": "alacarte",
+      "amount": 1526.57,
+      "closedAt": "2026-11-12T11:38:00.111Z",
+      "id": 37,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 6,
+      "mode": "alacarte",
+      "amount": 3000.17,
+      "closedAt": "2026-11-12T15:24:00.684Z",
+      "id": 38,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 5,
+      "mode": "buffet",
+      "amount": 2348.12,
+      "closedAt": "2026-11-12T13:29:00.295Z",
+      "id": 39,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-12T12:51:00.776Z",
+      "id": 40,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-13T15:05:00.728Z",
+      "id": 41,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 6,
+      "mode": "buffet",
+      "amount": 2817.74,
+      "closedAt": "2026-11-13T12:35:00.378Z",
+      "id": 42,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-13T15:18:00.988Z",
+      "id": 43,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-13T13:51:00.072Z",
+      "id": 44,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 5,
+      "mode": "buffet",
+      "amount": 2348.12,
+      "closedAt": "2026-11-13T13:54:00.314Z",
+      "id": 45,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 6,
+      "mode": "buffet",
+      "amount": 2817.74,
+      "closedAt": "2026-11-13T15:18:00.364Z",
+      "id": 46,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-14T12:12:00.883Z",
+      "id": 47,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-14T14:06:00.876Z",
+      "id": 48,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-14T15:42:00.899Z",
+      "id": 49,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 6,
+      "mode": "alacarte",
+      "amount": 2242.19,
+      "closedAt": "2026-11-14T14:51:00.162Z",
+      "id": 50,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-14T12:59:00.943Z",
+      "id": 51,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-14T15:23:00.913Z",
+      "id": 52,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-14T11:53:00.248Z",
+      "id": 53,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-14T13:22:00.056Z",
+      "id": 54,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-14T15:09:00.685Z",
+      "id": 55,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-14T13:09:00.972Z",
+      "id": 56,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 6,
+      "mode": "buffet",
+      "amount": 2817.74,
+      "closedAt": "2026-11-14T14:04:00.878Z",
+      "id": 57,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 4,
+      "mode": "alacarte",
+      "amount": 1574.83,
+      "closedAt": "2026-11-15T12:42:00.618Z",
+      "id": 58,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 6,
+      "mode": "buffet",
+      "amount": 2817.74,
+      "closedAt": "2026-11-15T12:23:00.668Z",
+      "id": 59,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 4,
+      "mode": "alacarte",
+      "amount": 699.14,
+      "closedAt": "2026-11-15T11:48:00.038Z",
+      "id": 60,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-15T14:15:00.520Z",
+      "id": 61,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "guests": 4,
+      "mode": "alacarte",
+      "amount": 1408.87,
+      "closedAt": "2026-11-15T13:27:00.617Z",
+      "id": 62,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 4,
+      "mode": "alacarte",
+      "amount": 918.06,
+      "closedAt": "2026-11-15T14:14:00.003Z",
+      "id": 63,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 8,
+      "mode": "buffet",
+      "amount": 3756.98,
+      "closedAt": "2026-11-15T14:18:00.505Z",
+      "id": 64,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-15T11:41:00.109Z",
+      "id": 65,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-15T13:20:00.776Z",
+      "id": 66,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-15T11:58:00.364Z",
+      "id": 67,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 1,
+      "mode": "buffet",
+      "amount": 469.62,
+      "closedAt": "2026-11-15T12:31:00.157Z",
+      "id": 68,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-15T13:58:00.529Z",
+      "id": 69,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-16T11:54:00.156Z",
+      "id": 70,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-16T14:16:00.347Z",
+      "id": 71,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 6,
+      "mode": "buffet",
+      "amount": 2817.74,
+      "closedAt": "2026-11-16T14:49:00.183Z",
+      "id": 72,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-16T12:56:00.176Z",
+      "id": 73,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 2,
+      "mode": "alacarte",
+      "amount": 109.46,
+      "closedAt": "2026-11-17T12:29:00.332Z",
+      "id": 74,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-17T15:21:00.423Z",
+      "id": 75,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-17T15:14:00.123Z",
+      "id": 76,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-17T15:15:00.204Z",
+      "id": 77,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-17T11:46:00.540Z",
+      "id": 78,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-17T14:43:00.650Z",
+      "id": 79,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-18T15:19:00.740Z",
+      "id": 80,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 4,
+      "mode": "alacarte",
+      "amount": 733.27,
+      "closedAt": "2026-11-18T13:24:00.496Z",
+      "id": 81,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 2,
+      "mode": "alacarte",
+      "amount": 1970.3,
+      "closedAt": "2026-11-18T12:22:00.752Z",
+      "id": 82,
+      "mock": true
+    },
+    {
+      "tableId": "A03",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-18T13:51:00.021Z",
+      "id": 83,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-18T11:26:00.300Z",
+      "id": 84,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-18T13:38:00.856Z",
+      "id": 85,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-18T13:45:00.335Z",
+      "id": 86,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 2,
+      "mode": "alacarte",
+      "amount": 441.38,
+      "closedAt": "2026-11-18T13:34:00.168Z",
+      "id": 87,
+      "mock": true
+    },
+    {
+      "tableId": "B02",
+      "guests": 4,
+      "mode": "alacarte",
+      "amount": 2324.58,
+      "closedAt": "2026-11-19T13:44:00.350Z",
+      "id": 88,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-19T12:29:00.751Z",
+      "id": 89,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 4,
+      "mode": "alacarte",
+      "amount": 1619.55,
+      "closedAt": "2026-11-19T13:49:00.999Z",
+      "id": 90,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-19T12:50:00.519Z",
+      "id": 91,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 5,
+      "mode": "buffet",
+      "amount": 2348.12,
+      "closedAt": "2026-11-19T13:56:00.967Z",
+      "id": 92,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-20T13:50:00.421Z",
+      "id": 93,
+      "mock": true
+    },
+    {
+      "tableId": "A02",
+      "guests": 1,
+      "mode": "alacarte",
+      "amount": 336.62,
+      "closedAt": "2026-11-20T11:32:00.539Z",
+      "id": 94,
+      "mock": true
+    },
+    {
+      "tableId": "A04",
+      "guests": 5,
+      "mode": "buffet",
+      "amount": 2348.12,
+      "closedAt": "2026-11-20T11:24:00.918Z",
+      "id": 95,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-20T14:38:00.390Z",
+      "id": 96,
+      "mock": true
+    },
+    {
+      "tableId": "A01",
+      "guests": 3,
+      "mode": "buffet",
+      "amount": 1408.87,
+      "closedAt": "2026-11-20T12:41:00.483Z",
+      "id": 97,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-20T13:18:00.763Z",
+      "id": 98,
+      "mock": true
+    },
+    {
+      "tableId": "B01",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-20T12:23:00.921Z",
+      "id": 99,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 2,
+      "mode": "buffet",
+      "amount": 939.25,
+      "closedAt": "2026-11-20T14:07:00.948Z",
+      "id": 100,
+      "mock": true
+    },
+    {
+      "tableId": "A05",
+      "guests": 4,
+      "mode": "buffet",
+      "amount": 1878.49,
+      "closedAt": "2026-11-21T11:33:00.135Z",
+      "id": 101,
+      "mock": true
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { baht } from '../../utils/stats'
 
 // กราฟแท่งยอดขายรายวัน (SVG ล้วน ไม่ต้องติดตั้งไลบรารีเพิ่ม)
-export default function SalesChart({ data }) {
+export default function SalesChart({ data, unit = 'ออเดอร์' }) {
   const W = 640
   const H = 260
   const pad = { top: 24, right: 12, bottom: 44, left: 12 }
@@ -28,7 +28,7 @@ export default function SalesChart({ data }) {
         const isToday = i === data.length - 1
         return (
           <g key={d.key}>
-            <title>{`${d.date.toLocaleDateString('th-TH')} · ${baht(d.total)} · ${d.orders} ออเดอร์`}</title>
+            <title>{`${d.date.toLocaleDateString('th-TH')} · ${baht(d.total)} · ${d.orders} ${unit}`}</title>
             <rect
               x={x}
               y={d.total > 0 ? y : H - pad.bottom - 2}

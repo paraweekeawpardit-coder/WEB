@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useSearchParams } from 'react-router-dom'
 import MenuToolbar from '../../components/customer/MenuToolBar'
+import { customCategoriesOf } from '../../utils/categories'
 import MenuCard from '../../components/customer/MenuCard'
 import CartPanel from '../../components/customer/CartPanel'
 import OrderStatus from '../../components/customer/OrderStatus'
@@ -33,20 +34,28 @@ export default function MenuPage() {
       .catch(() => {})
   }, [table])
 
+  // โหลดเมนู แล้วโหลดซ้ำทุก 10 วินาที เพื่อให้เมนูที่แอดมินซ่อน/เพิ่ม/แก้ราคา ขึ้นตามโดยไม่ต้องรีเฟรช
   useEffect(() => {
     let alive = true
-    api
-      .getMenus()
-      .then((data) => {
-        if (!alive) return
-        setMenus(data)
-        setStatus('done')
-      })
-      .catch(() => alive && setStatus('error'))
+    const load = () =>
+      api
+        .getMenus()
+        .then((data) => {
+          if (!alive) return
+          setMenus(data)
+          setStatus('done')
+        })
+        .catch(() => alive && setStatus((s) => (s === 'done' ? s : 'error')))
+    load()
+    const timer = setInterval(load, 10000)
     return () => {
       alive = false
+      clearInterval(timer)
     }
   }, [])
+
+  // หมวดที่แอดมินเพิ่มเอง (เฉพาะที่มีเมนูพร้อมขายอยู่)
+  const extraCategories = useMemo(() => customCategoriesOf(menus.filter((m) => m.available)), [menus])
 
   const visible = useMemo(() => {
     const q = search.trim().toLowerCase()
@@ -61,6 +70,15 @@ export default function MenuPage() {
     setSubmitting(true)
     setError('')
     try {
+      // ตรวจกับเมนูล่าสุดก่อนส่ง: ถ้ามีเมนูที่แอดมินซ่อน/ลบไปแล้ว ให้เอาออกจากตะกร้าและให้ลูกค้าตรวจอีกรอบ
+      const fresh = await api.getMenus()
+      const gone = cart.items.filter((i) => !fresh.some((m) => m.id === i.menuId && m.available))
+      if (gone.length > 0) {
+        gone.forEach((i) => cart.remove(i.menuId))
+        setMenus(fresh)
+        setError(`ขออภัย ${gone.map((i) => i.name).join(', ')} หมดแล้ว ระบบนำออกจากตะกร้าให้แล้ว กรุณาตรวจรายการแล้วกดยืนยันอีกครั้ง`)
+        return
+      }
       await api.createOrder({ tableId: table, items: cart.items })
       cart.clear()
       setNotice('ส่งออเดอร์เข้าครัวแล้ว')
@@ -95,7 +113,13 @@ export default function MenuPage() {
 
       <div className="menu-layout">
         <section className="menu-main">
-          <MenuToolbar search={search} onSearch={setSearch} category={category} onCategory={setCategory} />
+          <MenuToolbar
+            search={search}
+            onSearch={setSearch}
+            category={category}
+            onCategory={setCategory}
+            extraCategories={extraCategories}
+          />
 
           {status === 'loading' && <p className="muted">กำลังโหลดเมนู...</p>}
           {status === 'error' && <p role="alert" className="field-error">โหลดเมนูไม่สำเร็จ กรุณาลองใหม่</p>}

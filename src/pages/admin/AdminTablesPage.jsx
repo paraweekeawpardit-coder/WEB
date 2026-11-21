@@ -191,6 +191,17 @@ export default function AdminTablesPage() {
       setBusyId(target.id)
       await Promise.all(target.activeOrders.map((o) => api.updateOrderStatus(o.id, 'paid')))
       await Promise.all(target.tableCalls.map((c) => api.updateServiceCall(c.id, { done: true })))
+      // เก็บประวัติจำนวนลูกค้าของโต๊ะนี้ไว้ทำสถิติ ก่อนรีเซ็ตจำนวนคนเป็น 0
+      const seated = Number(target.guests) || 0
+      if (seated > 0) {
+        await api.createVisit({
+          tableId: target.id,
+          guests: seated,
+          mode: target.mode ?? 'buffet',
+          amount: Math.round((Number(target.totalAmount) || 0) * 100) / 100, // ยอดบิลสุทธิ (รวมค่าบริการ + VAT)
+          closedAt: new Date().toISOString(),
+        })
+      }
       await api.updateTable(target.id, { status: 'available', guests: 0, mode: 'buffet' })
 
       setClearingTable(null)
